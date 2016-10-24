@@ -70,27 +70,22 @@
     z-index: 2;
 }
 
-#pizzaHomePic {
+.imgPizza {
     position: absolute;
     width: 15%;
     height: none;
     margin-top: 10%;
+}
+
+#pizza1 {
     margin-left: 15%;
 }
 
 #pizza2 {
-    position: absolute;
-    width: 15%;
-    height: none;
-    margin-top: 10%;
     margin-left: 40%;
 }
 
 #pizza3 {
-    position: absolute;
-    width: 15%;
-    height: none;
-    margin-top: 10%;
     margin-left: 65%;
 }
 
