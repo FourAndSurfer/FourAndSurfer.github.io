@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta content="pizzaria">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/login.css">
@@ -45,14 +46,14 @@
         <input class="inputLogin" type="password" placeholder="senha">
         <br/>
         <br/>
-        <button id="btEntrar">Entrar</button>
+        <button id="btEntrar" onclick="emManutencao();">Entrar</button>
         <a id="recuperarSenha">Recuperar senha</a>
     </div>
     <!-- Cadastro -->
     <div id="mySidenav3" class="sidenav3">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNavCadastro()">&times;</a>
         <table id="tabelaCadastro">
-            <form action="underconstruction.html">
+            <form action="#">
                 <tr>
                     <td colspan="2" style="text-align:center">
                         <h1><a>Cadastro</a></h1>
@@ -103,7 +104,7 @@
                         <a>Sua senha:</a>
                     </td>
                     <td>
-                        <input type="password" name: "senha" id="senha" maxlength="10" />
+                        <input type="password" name: "senha" id="senha" maxlength="10" placeholder="Sua Senha" />
                     </td>
                 </tr>
                 <tr>
@@ -121,8 +122,8 @@
                             <br />
                             <br />
                             <br />
-                            <input type="reset" value="Limpa Formulário" />&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;
-                            <input type="submit" value="Enviar Formulário" />
+                            <input type="reset" value="Limpa Formulário" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="submit" value="Enviar Formulário" onclick="emManutencao();" />
                     </td>
                 </tr>
     </div>
