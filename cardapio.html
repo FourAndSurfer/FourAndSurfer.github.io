@@ -12,10 +12,11 @@
     <title>La Bella</title>
     <link rel="icon" href="img/favicon.png">
     <script src="js/cardapio.js"></script>
+    <script src="js/carrinho.js"></script>
     <link rel="stylesheet" href="css/login.css">
 </head>
 
-<body background="img/pizza1080.jpg">
+<body background="img/pizza1080.jpg" onload="checkCookie()">
     <!-- cabeçalho da pagina com menu, carrinho, cadastro e login -->
     <div id="header">
         <ul id="menu">
@@ -55,7 +56,6 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNavCarrinho()">&times;</a>
         <a>Carrinho</a>
         <ul id="itensCarrinho">
-            
         </ul>
         <a>Total</a>
         <a>R$<a id="valorTotal"></a></a>
@@ -70,7 +70,7 @@
         <button id="botaoVoltar" onclick="changeImagesBackward()"><img id="imgVoltar" src="img/botaoVoltar.png"></button>
         <img class="imgPizza" id="pizza1" src="img/pizzapronta1.jpg" alt="Welcome">
         <button id="botaoProximo" onclick="changeImagesForward()"><img id="imgProximo" src="img/botaoProximo.png"></button>
-        <button id="comprar1" onclick=""> Comprar </button>
+        <button id="comprar1" onclick="addPizzaToCart('Pepperoni', '20.00');"> Comprar </button>
         <button id="comprar2" onclick=""> Comprar </button>
         <button id="comprar3" onclick=""> Comprar </button>
         <img class="imgPizza" id="pizza2" src="img/pizzapronta2.jpg" />

@@ -97,9 +97,9 @@ body {
     display: none;
 }
 
-.carrinho:after {
+/*.carrinho:after {
     content: "0";
-}
+}*/
 
 #logo {
     position: fixed;
