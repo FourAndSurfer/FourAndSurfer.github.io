@@ -1,6 +1,7 @@
 <!-- Definição do html5 -->
 <!DOCTYPE html>
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta content="pizzaria">
@@ -13,10 +14,9 @@
 </head>
 
 <body background="img/pizza1080.jpg">
-<!-- Cabeçalho da pagina contendo o menu, o login, carrinho e o cadastro -->
+    <!-- Cabeçalho da pagina contendo o menu, o login, carrinho e o cadastro -->
     <div id="header">
         <ul id="menu">
-
             <li id="login" class="login" onclick="openNavLogin()">
                 Login
             </li>
@@ -26,7 +26,6 @@
             <li id="login" class="login">
                 <img src="img/carrinho.png"><span class="carrinho" id="qtCarrinho"></span>
             </li>
-
         </ul>
     </div>
     <!-- Menu -->
@@ -43,24 +42,17 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNavLogin()">&times;</a>
         <a>Usuário</a>
         <input class="inputLogin" type="text" placeholder="Seu e-mail">
-
         <a>Senha</a>
-        <input class="inputLogin" type="password" placeholder="senha"><br/><br/>
+        <input class="inputLogin" type="password" placeholder="senha">
+        <br/>
+        <br/>
         <button id="btEntrar" onclick="emManutencao();">Entrar</button>
         <a id="recuperarSenha">Recuperar senha</a>
     </div>
-
-    
     <!-- Logo da Pizzaria -->
     <div id="logo">
         <img src="img/logofinal.png" width="50%" height="none">
     </div>
-    
-    <!--  definir se vai colocar ou não.
-    <div id="img">
-        <img src="img/quem%20somos.png" width="50%" height="none" alt="">
-    </div>
-    -->
     <!-- Conteúdo do quem somos -->
     <div id="quemSomos">
         <h2 id="titulo">Um momento sobre nós</h2>
@@ -81,14 +73,14 @@
         </p>
         </span>
     </div>
-
-
     <!-- rodapé da pagina com dados de contato e link para redes sociais -->
     <footer id="footer">
         <ul id="ulRedes">
             <li id="contatos">
-                <b>Rua: Almirante Barroso - 258 / CEP: 24458-456 </b><br />
-                <b>Telefone: (21) 1234-5678</b><br />
+                <b>Rua: Almirante Barroso - 258 / CEP: 24458-456 </b>
+                <br />
+                <b>Telefone: (21) 1234-5678</b>
+                <br />
                 <b>Email: maint@maint.com</b>
             </li>
             <li class="redes">
@@ -104,4 +96,5 @@
     </footer>
     <!-- fim da página -->
 </body>
+
 </html>
