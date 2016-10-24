@@ -24,3 +24,6 @@ function closeNavCadastro() {
     document.getElementById("mySidenav3").style.width = "0";
     document.getElementById("logo").style.width = "";
 }
+function emManutencao(){
+    alert ("Estamos em manutenção.");
+}
