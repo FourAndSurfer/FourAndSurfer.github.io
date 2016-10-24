@@ -7,6 +7,7 @@
     <meta content="pizzaria">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/carrinhoDiv.css">
     <link rel="stylesheet" href="css/cadastroTipoLogin.css">
     <script src="js/index.js"></script>
     <title>La Bella</title>
@@ -23,7 +24,7 @@
             <li id="cadastro" class="login" onclick="openNavCadastro()">
                 Cadastro
             </li>
-            <li id="carrinho" class="login">
+            <li id="carrinho" class="login" onclick="openNavCarrinho()">
                 <img src="img/carrinho.png"><span class="carrinho" id="qtCarrinho"></span>
             </li>
         </ul>
@@ -49,6 +50,17 @@
         <br/>
         <button id="btEntrar" onclick="emManutencao();">Entrar</button>
         <a id="recuperarSenha">Recuperar senha</a>
+    </div>
+    <!-- Carrinho -->
+    <div id="mySidenavCarrinho" class="sidenavCarrinho">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNavCarrinho()">&times;</a>
+        <a>Carrinho</a>
+        <ul id="itensCarrinho">
+            
+        </ul>
+        <a>Total</a>
+        <a>R$<a id="valorTotal"></a></a>
+        <button id="btFinalizar" onclick="emManutencao();">Finalizar compra</button>
     </div>
     <!-- Cadastro -->
     <div id="mySidenav3" class="sidenav3">
