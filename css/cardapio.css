@@ -50,11 +50,9 @@
 
 .imgPizza {
     position: absolute;
-    width: 18.5%;
+    width: 15%;
     height: none;
     margin-top: 10%;
-    opacity: 999;
-    z-index: 2;
 }
 
 #pizza1 {
