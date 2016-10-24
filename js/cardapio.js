@@ -25,6 +25,24 @@ function changeImage() {
     if (thisNumber < 0) { thisNumber = 3; }
 
     document.getElementById('pizza1').src = pizzasCollection[thisNumber];
+    if (thisNumber == 0) {
+        document.getElementById('comprar1').onclick() = addPizzaToCart('Pepperoni', '19.99');
+    }
+    else if (thisNumber == 3) {
+        document.getElementById('comprar1').onclick() = addPizzaToCart('Chocolate com Morango', '15.99');
+    }
     document.getElementById('pizza2').src = pizzasCollection[thisNumber + 1];
-    document.getElementById('pizza3').src = pizzasCollection[thisNumber + 2];
+    if ((thisNumber + 1) == 1) {
+        document.getElementById('comprar2').onclick() = addPizzaToCart('Calabresa Acebolada', '29.95');
+    }
+    else if ((thisNumber + 1) == 4) {
+        document.getElementById('comprar2').onclick() = addPizzaToCart('Romeu e Julieta', '15.99');
+    }
+    document.getElementById('comprar2').onclick() = thisNumber == 1 ? addPizzaToCart('Calabresa Acebolada', '29.95');
+    if ((thisNumber + 2) == 2) {
+        document.getElementById('comprar2').onclick() = addPizzaToCart('Calabresa Especial', '25.49');
+    }
+    else if ((thisNumber + 2) == 5) {
+        document.getElementById('comprar2').onclick() = addPizzaToCart('Brigadeiro', '15.99');
+    }
 }
