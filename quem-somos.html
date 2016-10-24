@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/carrinhoDiv.css">
     <script src="js/index.js"></script>
+    <script src="js/carrinho.js"></script>
     <title>La Bella</title>
     <link rel="icon" href="img/favicon.png">
 </head>
 
-<body background="img/pizza1080.jpg">
+<body background="img/pizza1080.jpg" onload="checkCookie()">
     <!-- Cabeçalho da pagina contendo o menu, o login e o carrinho -->
     <div id="header">
         <ul id="menu">
@@ -99,7 +100,8 @@
                 <a href="#"><img src="img/twitter.png"></a>
             </li>
             <li class="redes">
-                <a href="#"><img src="img/instagram.jpg" width="80%" height="none"></a>
+                <!-- Easter egg para resetar o carrinho de compras -->
+                <a href="#" onclick="resetCart();"><img src="img/instagram.jpg" width="80%" height="none"></a>
             </li>
         </ul>
     </footer>

@@ -1,10 +1,10 @@
 var pizzaCount = getCookie("pizzaCount") == "" ? 0 : getCookie("pizzaCount");
+var cart = document.getElementsByClassName("carrinho");
 
 function addPizzaToCart(pizzaName, value) {
     pizzaCount++;
     setCookie("pizzaCount", pizzaCount, 1);
     setCookie(pizzaName, value, 1);
-    var cart = document.getElementsByClassName("carrinho");
     cart[0].style.display = "inline";
     checkCookie();
 }
@@ -35,9 +35,14 @@ function checkCookie() {
     var pizzaCount = getCookie("pizzaCount");
     if (pizzaCount != "") {
         document.getElementById("qtCarrinho").innerHTML = getCookie("pizzaCount");
-        var cart = document.getElementsByClassName("carrinho");
         cart[0].style.display = "inline";
     } else {
         document.getElementById("qtCarrinho").innerHTML = "";
+        cart[0].style.display = "none";
     }
+}
+
+function resetCart() {
+    setCookie("pizzaCount", "", 1);
+    checkCookie();
 }
