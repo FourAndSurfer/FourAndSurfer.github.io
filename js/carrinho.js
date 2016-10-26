@@ -5,6 +5,7 @@ function addPizzaToCart(pizzaName, value) {
     pizzaCount++;
     setCookie("pizzaCount", pizzaCount, 1);
     setCookie(pizzaName, value, 1);
+    setCookie(pizzaName.concat("Count"), getCookie("pizzaNameCount") == "" ? 0 : getCookie("pizzaNameCount") + 1, 1);
     cart[0].style.display = "inline";
     checkCookie();
 }
