@@ -25,24 +25,18 @@ function changeImage() {
     if (thisNumber < 0) { thisNumber = 3; }
 
     document.getElementById('pizza1').src = pizzasCollection[thisNumber];
-    if (thisNumber == 0) {
-        document.getElementById('comprar1').onclick() = addPizzaToCart('Pepperoni', '19.99');
-    }
-    else if (thisNumber == 3) {
-        document.getElementById('comprar1').onclick() = addPizzaToCart('Chocolate com Morango', '15.99');
-    }
     document.getElementById('pizza2').src = pizzasCollection[thisNumber + 1];
-    if ((thisNumber + 1) == 1) {
-        document.getElementById('comprar2').onclick() = addPizzaToCart('Calabresa Acebolada', '29.95');
-    }
-    else if ((thisNumber + 1) == 4) {
-        document.getElementById('comprar2').onclick() = addPizzaToCart('Romeu e Julieta', '15.99');
-    }
-    document.getElementById('comprar2').onclick() = thisNumber == 1 ? addPizzaToCart('Calabresa Acebolada', '29.95');
-    if ((thisNumber + 2) == 2) {
-        document.getElementById('comprar2').onclick() = addPizzaToCart('Calabresa Especial', '25.49');
-    }
-    else if ((thisNumber + 2) == 5) {
-        document.getElementById('comprar2').onclick() = addPizzaToCart('Brigadeiro', '15.99');
-    }
+    document.getElementById('pizza3').src = pizzasCollection[thisNumber + 2];
+
+    var buy1 = document.getElementById('comprar1');
+    var fun1 = (thisNumber) == 0 ? "addPizzaToCart('Pepperoni', '19.99');" : "addPizzaToCart('Chocolate com Morango', '15.99');";
+    buy1.setAttribute('onclick', fun1);
+
+    var buy2 = document.getElementById('comprar2');
+    var fun2 = (thisNumber + 1) == 1 ? "addPizzaToCart('Calabresa Acebolada', '29.95');" : "addPizzaToCart('Romeu e Julieta', '15.99');";
+    buy2.setAttribute('onclick', fun2);
+
+    var buy3 = document.getElementById('comprar3');
+    var fun3 = (thisNumber + 2) == 2 ? "addPizzaToCart('Calabresa Especial', '25.49');" : "addPizzaToCart('Brigadeiro', '15.99');";
+    buy3.setAttribute('onclick', fun3);
 }
