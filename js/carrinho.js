@@ -44,20 +44,33 @@ botaoAdiciona.addEventListener("click", function(event) {
         valPizza = 28.50;
         idPizza = "combo3";
     }
+    multiplyPizzaValue();
+});
 
-    var novaPizza = "<tr class='trCarrinho'>" +
-        "<td class='pizza-nome'>" + nomePizza + "</td>" +
-        "<td class='pizza-quantidade' id=" + idPizza + ">1</td>" +
-        "<td class='pizza-preco' id='preco-2'>" + valPizza + "</td>" +
-        "<td class='pizza-excluir' id='exclui-2'><img src='../img/btexcluir.png' class='btExcluir'></td>" +
-        "</tr>"
-    var todasPizzas = document.querySelector("table");
-    todasPizzas.innerHTML += novaPizza;
+function multiplyPizzaValue() {
+    var pizzaQty = document.getElementById(idPizza) == null ? "0" : document.getElementById(idPizza).innerHTML;
+    if (pizzaQty > 0) {
+        pizzaQty++
+        var multipliedPizza = valPizza * pizzaQty;
+        document.getElementById(idPizza.concat("Carrinho")).innerHTML = "<td class='pizza-nome'>" + nomePizza + "</td>" +
+            "<td class='pizza-quantidade' id=" + idPizza + ">" + pizzaQty + "</td>" +
+            "<td class='pizza-preco'id=" + idPizza.concat("Price") + ">" + multipliedPizza + "</td>" +
+            "<td class='pizza-excluir' id='exclui-2'><img src='../img/btexcluir.png' class='btExcluir'></td>" +;
+    } else {
+        var novaPizza = "<tr class='trCarrinho' id=" + idPizza.concat("Carrinho") + ">" +
+            "<td class='pizza-nome'>" + nomePizza + "</td>" +
+            "<td class='pizza-quantidade' id=" + idPizza + ">1</td>" +
+            "<td class='pizza-preco'id=" + idPizza.concat("Price") + ">" + valPizza + "</td>" +
+            "<td class='pizza-excluir' id='exclui-2'><img src='../img/btexcluir.png' class='btExcluir'></td>" +
+            "</tr>";
+        var todasPizzas = document.querySelector("table");
+        todasPizzas.innerHTML += novaPizza;
+    }
+
     total += valPizza;
     var spanTotal = document.querySelector("#total");
     spanTotal.innerHTML = total;
-});
-
+}
 
 
 /* var pizzaCount = getCookie("pizzaCount") == "" ? 0 : getCookie("pizzaCount");
