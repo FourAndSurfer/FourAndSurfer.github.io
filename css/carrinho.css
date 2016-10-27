@@ -102,3 +102,13 @@ button:active{
 form{
     margin-left: 40%;
 }
+.btExcluir{
+    height: 25px;
+    width: none;
+}
+#spanTotal{
+    margin-left: 40%;
+}
+#finalizarCompra{
+    margin-left: 1% ;
+}

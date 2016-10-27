@@ -49,7 +49,7 @@ botaoAdiciona.addEventListener("click", function(event) {
         "<td class='pizza-nome'>" + nomePizza + "</td>" +
         "<td class='pizza-quantidade' id=" + idPizza + ">1</td>" +
         "<td class='pizza-preco' id='preco-2'>" + valPizza + "</td>" +
-        "<td class='pizza-excluir' id='exclui-2'></td>" +
+        "<td class='pizza-excluir' id='exclui-2'><img src='../img/btexcluir.png' class='btExcluir'></td>" +
         "</tr>"
     var todasPizzas = document.querySelector("table");
     todasPizzas.innerHTML += novaPizza;
@@ -57,9 +57,6 @@ botaoAdiciona.addEventListener("click", function(event) {
     var spanTotal = document.querySelector("#total");
     spanTotal.innerHTML = total;
 });
-
-
-
 
 
 
