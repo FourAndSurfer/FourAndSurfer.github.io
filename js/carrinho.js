@@ -55,13 +55,13 @@ function multiplyPizzaValue() {
         document.getElementById(idPizza.concat("Carrinho")).innerHTML = "<td class='pizza-nome'>" + nomePizza + "</td>" +
             "<td class='pizza-quantidade' id=" + idPizza + ">" + pizzaQty + "</td>" +
             "<td class='pizza-preco'id=" + idPizza.concat("Price") + ">" + multipliedPizza + "</td>" +
-            "<td class='pizza-excluir' id='exclui-2'><img src='../img/btexcluir.png' class='btExcluir'></td>" +;
+            "<td class='pizza-excluir' id='exclui-2'><img src='img/btexcluir.png' class='btExcluir'></td>";
     } else {
         var novaPizza = "<tr class='trCarrinho' id=" + idPizza.concat("Carrinho") + ">" +
             "<td class='pizza-nome'>" + nomePizza + "</td>" +
             "<td class='pizza-quantidade' id=" + idPizza + ">1</td>" +
             "<td class='pizza-preco'id=" + idPizza.concat("Price") + ">" + valPizza + "</td>" +
-            "<td class='pizza-excluir' id='exclui-2'><img src='../img/btexcluir.png' class='btExcluir'></td>" +
+            "<td class='pizza-excluir' id='exclui-2'><img src='img/btexcluir.png' class='btExcluir'></td>" +
             "</tr>";
         var todasPizzas = document.querySelector("table");
         todasPizzas.innerHTML += novaPizza;
