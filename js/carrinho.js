@@ -1,4 +1,60 @@
-var pizzaCount = getCookie("pizzaCount") == "" ? 0 : getCookie("pizzaCount");
+var botaoAdiciona = document.querySelector("#adicionar-pizza");
+var nomePizza = "";
+var valPizza = "";
+var total = 0.0;
+
+botaoAdiciona.addEventListener("click", function(event){
+    event.preventDefault();
+    var pizza = document.querySelector("#pizzas");
+    if (pizza.value == "1"){
+        nomePizza = "Pepperoni";
+        valPizza = 20.00;
+    } else if (pizza.value == "2"){
+        nomePizza = "Calabresa acebolada";
+        valPizza = 18.50;
+    } else if (pizza.value == "3"){
+        nomePizza = "Calabresa especial";
+        valPizza = 20.00;
+    } else if (pizza.value == "4"){
+        nomePizza = "Chocolate com morango";
+        valPizza = 20.00;
+    } else if (pizza.value == "5"){
+        nomePizza = "Romeu e Julieta";
+        valPizza = 18.50;
+    } else if (pizza.value == "6"){
+        nomePizza = "Brigadeiro";
+        valPizza = 18.50;
+    } else if (pizza.value == "7"){
+        nomePizza = "Combo 1";
+        valPizza = 28.50;
+    } else if (pizza.value == "8"){
+        nomePizza = "Combo 2";
+        valPizza = 28.50;
+    } else if (pizza.value == "9"){
+        nomePizza = "Combo 3";
+        valPizza = 28.50;
+    }
+    
+        
+    var novaPizza = "<tr class='trCarrinho'>"+
+                    "<td class='pizza-nome'>"+nomePizza+"</td>"+
+                    "<td class='pizza-quantidade' id='qt-2'>1</td>"+
+                    "<td class='pizza-preco' id='preco-2'>"+valPizza+"</td>"+
+                    "<td class='pizza-excluir' id='exclui-2'></td>"+
+                "</tr>"
+var todasPizzas = document.querySelector("table");
+todasPizzas.innerHTML += novaPizza;
+total += valPizza ;
+var spanTotal = document.querySelector("#total");
+    spanTotal.innerHTML = total;
+});
+
+
+
+
+
+
+/* var pizzaCount = getCookie("pizzaCount") == "" ? 0 : getCookie("pizzaCount");
 var cart = document.getElementsByClassName("carrinho");
 
 function addPizzaToCart(pizzaName, value) {
@@ -46,4 +102,4 @@ function checkCookie() {
 function resetCart() {
     setCookie("pizzaCount", "", 1);
     checkCookie();
-}
+} */
