@@ -55,14 +55,14 @@ function multiplyPizzaValue() {
         document.getElementById(idPizza.concat("Carrinho")).innerHTML = "<td class='pizza-nome'>" + nomePizza + "</td>" +
             "<td class='pizza-quantidade' id=" + idPizza + ">" + pizzaQty + "</td>" +
             "<td class='pizza-preco'id=" + idPizza.concat("Price") + ">" + multipliedPizza + "</td>" +
-            "<td class='pizza-excluir' id='exclui-2'><img src='img/btexcluir.png' class='btExcluir'></td>";
+            "<td class='pizza-excluir'><img src='img/btexcluir.png' class='btExcluir' onclick='deleteRow(\"" + idPizza.concat("Carrinho") + "\");'></td>";
     } else {
-        var novaPizza = "<tr class='trCarrinho' id=" + idPizza.concat("Carrinho") + ">" +
+        var novaPizza = "<tr class='trCarrinho' id=" + idPizza.concat("Carrinho") + " name=" + idPizza.concat("Carrinho") + ">" +
             "<td class='pizza-nome'>" + nomePizza + "</td>" +
             "<td class='pizza-quantidade' id=" + idPizza + ">1</td>" +
             "<td class='pizza-preco'id=" + idPizza.concat("Price") + ">" + valPizza + "</td>" +
-            "<td class='pizza-excluir' id='exclui-2'><img src='img/btexcluir.png' class='btExcluir'></td>" +
-            "</tr>";
+            "<td class='pizza-excluir'><img src='img/btexcluir.png' class='btExcluir' onclick='deleteRow(\"" + idPizza.concat("Carrinho") + "\");'></td>";
+        "</tr>";
         var todasPizzas = document.querySelector("table");
         todasPizzas.innerHTML += novaPizza;
     }
@@ -72,6 +72,14 @@ function multiplyPizzaValue() {
     spanTotal.innerHTML = total;
 }
 
+function deleteRow(pizzaToDelete) {
+    var valueToRemove = document.getElementById(idPizza.concat("Price")).innerHTML;
+    total -= valueToRemove;
+    var spanTotal = document.querySelector("#total");
+    spanTotal.innerHTML = total;
+    var row = document.getElementById(pizzaToDelete);
+    row.parentNode.removeChild(row);
+}
 
 /* var pizzaCount = getCookie("pizzaCount") == "" ? 0 : getCookie("pizzaCount");
 var cart = document.getElementsByClassName("carrinho");
