@@ -1,1 +1,26 @@
-
+.index{
+    
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+#index1{
+    background-image: url(/img/pizza1080.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 30%;
+    opacity: 0.5;
+}
+#index2{
+    background-image: url(/img/mapa.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 30%;
+    opacity: 0.5;
+}
+#index3{
+    background-image: url(/img/contato.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 30%;
+    opacity: 0.5;
+}
