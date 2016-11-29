@@ -8,17 +8,17 @@
     padding:15.7%;
 }
 #index1{
-    background-image: url(/img/pizza1080.jpg);
+    background-image: url(/img/pizza1080.png);
     background-position: center;
     background-size: cover;
 }
 #index2{
-    background-image: url(/img/mapa.jpg);
+    background-image: url(/img/mapa.png);
     background-position: center;
     background-size: cover;
 }
 #index3{
-    background-image: url(/img/contato.jpg);
+    background-image: url(/img/contato.png);
     background-position: center;
     background-size: cover;
 }

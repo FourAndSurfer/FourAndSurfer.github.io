@@ -1,22 +1,32 @@
-## Contributing
+# Contributing to PhoneGap Facebook Plugin
 
-Thank you for your interest in contributing to the Hello World PhoneGap Template.
+:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
-#### Issues
+The following is a set of guidelines for contributing to the PhoneGap Facebook Connect Plugin.
 
-One of the best contributions is filing issues in the [Issue Tracker][issue-tracker]. 
+These are just guidelines, not rules, use your best judgement and feel free to propose changes to this document in a pull request.
 
-All contributions (feature or bug fix) should start with an issue first.
+## Getting Help
 
-#### Pull requests
+Before creating a Github issue make sure you...
 
-- Fork the repository
-- Create a branch (`git checkout -b issue-nnn`)
-- If possible, add a failing test
-- Commit your fix/feature and tests (`git commit -am "fixes for issue #nnn"`)
-- Push to the branch (`git push -u origin issue-nnn`)
-- Open a [Pull Request][pull-request]
+- Check the [Troubleshooting Guide](TROUBLESHOOTING.md) for well known issues.
+- Search the [issues list](https://github.com/Wizcorp/phonegap-facebook-plugin/issues) for existing closed or still open issues
+- Create a Github issue
 
+#### Creating an Issue
 
-[issue-tracker]: https://github.com/phonegap/phonegap-template-hello-world/issues
-[pull-request]: https://github.com/phonegap/phonegap-template-hello-world/pulls
+When submitting an issue please add as much of the following information:
+
+- Tell us what you expected to happen and what actually happened. ("It doesn't work" is **not** a solveable problem)
+- Provide sample code so people can test and debug the problem.
+- Provide `adb logcat` or Xcode console output.
+
+Can you solve the problem yourself? If so see the next section on Pull Requests and send us the fix!!! <3
+
+## Pull Requests
+
+- Include screenshots and animated GIFs in your pull request whenever possible.
+- Try to follow the [JavaScript](https://github.com/Wizcorp/javascript-styleguide/blob/master/README.md), [Objective-C](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml) or [Java](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html) style guides. Although these are just guides, please at least support continuety (that means **using 4 spaces please**).
+- **Send your pull request to the develop branch.**
+- If you can, provide sample testing code.
