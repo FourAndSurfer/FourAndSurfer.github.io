@@ -1,34 +1,38 @@
-.index{
-    
+.index {
     border-bottom: 1px solid black;
     width: 100%;
     position: relative;
     color: black;
     font-family: sans-serif;
-    padding:12.7%;
-}
-#index1{
-    background-image: url(/www/img/pizza1080.png);
-    background-position: center;
-    background-size: cover;
-}
-#index2{
-    background-image: url(/www/img/mapa.png);
-    background-position: center;
-    background-size: cover;
-}
-#index3{
-    background-image: url(/www/img/contato.png);
-    background-position: center;
-    background-size: cover;
-}
-#navbar-sem-margin{
-    margin-bottom: 0px;
-}
-.tamanho{
-   font-size: 4px;
-}
-.jumbotron{
-    margin-top: 13%;
+    padding: 12.7%;
 }
 
+#index1 {
+    background-image: url(/img/pizza1080.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#index2 {
+    background-image: url(/img/mapa.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#index3 {
+    background-image: url(/img/contato.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#navbar-sem-margin {
+    margin-bottom: 0px;
+}
+
+.tamanho {
+    font-size: 4px;
+}
+
+.jumbotron {
+    margin-top: 13%;
+}

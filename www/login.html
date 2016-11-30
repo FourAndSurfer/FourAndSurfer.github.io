@@ -6,15 +6,15 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-<!--    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+    <!--    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="http://connect.facebook.net/en_US/all.js"></script>
+
 
     <title>Nameless</title>
 </head>
@@ -22,27 +22,28 @@
 <body>
     <div class="app">
         <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">    <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
         
       </button>
-            <a class="navbar-brand" href="#">Pizzaria</a>
-        </div>
+                    <a class="navbar-brand" href="#">Pizzaria</a>
+                </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Cardápio</a></li>
-                <li><a href="sobre.html">Sobre nós</a></li>
-                <li><a href="#">Carrinho</a></li>
-                <li><a href="localizacao.html">Contato</a></li>
-                <li class="active"><a href="#">Login</a></li>
-            </ul>
-        </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Cardápio</a></li>
+                        <li><a href="sobre.html">Sobre nós</a></li>
+                        <li><a href="#">Carrinho</a></li>
+                        <li><a href="localizacao.html">Contato</a></li>
+                        <li class="active"><a href="#">Login</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <!-- /.navbar-collapse -->
@@ -88,12 +89,12 @@
                                     <input type="email" class="form-control input-sm" id="email" placeholder="Email">
                                 </div>
                             </div>
-                             <div class="form-group">
+                            <div class="form-group">
                                 <label for="endereço" class="input-sm">Telefones</label>
                                 <div class="input-group">
                                     <a class="btn input-group-addon input-sm"><i class="glyphicon glyphicon-earphone"></i></a>
                                     <input type="number" class="form-control" id="tel" placeholder="telefone">
-                                    </div>
+                                </div>
 
                                 <div class="input-group">
                                     <a class="btn input-group-addon input-sm"><i class="glyphicon glyphicon-phone"></i></a>
@@ -102,6 +103,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="endereço" class="input-sm">Endereço</label>
+                                <button id="localiza">Descubra minha localização</button>
                                 <input type="text" class="form-control input-sm" id="endereco" placeholder="Rua">
                                 <input type="text" class="form-control input-sm" id="complemento" placeholder="Complemento">
                                 <div class="input-group">
@@ -140,6 +142,7 @@
 <!--<script src="js/facebook.js"></script>-->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/angular.min.js"></script>
+<script src="js/localiza.js"></script>
 <script type="text/javascript">
     app.initialize();
 
