@@ -24,12 +24,15 @@ var onSuccess = function (position) {
     geocoder.geocode({'location': latlng}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       if (results[1]) {
-        var separaEndereco = results[0].formatted_address.split(',', 4);
-        var separaBairro = separaEndereco[1].split('-', 2);
-        $('#endereco').val(separaEndereco[0]);
-        $('#complemento').val(separaBairro[0]);
-        $('#bairro').val(separaBairro[1]);
-        $('#cep').val(separaEndereco[3]);
+//        var separaEndereco = results[0].formatted_address.split(',', 4);
+//        var separaBairro = separaEndereco[1].split('-', 2);
+        $('#endereco').val(results[0].address_components[1].long_name);
+        $('#complemento').val(results[0].address_components[0].long_name);
+        $('#bairro').val(results[0].address_components[2].long_name);
+//        $('#cep').val(separaEndereco[3]);
+        $('#cep').val(results[0].address_components[7].long_name);
+          console.log(results[0]);
+
 
       } else {
         alert('No results found');
