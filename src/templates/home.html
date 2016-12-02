@@ -1,3 +1,15 @@
 <section class="section container-fluid">
-  <h1 class="page-header">Welcome to Pizzaria</h1>  
+    <h1 class="page-header">Welcome to Pizzaria</h1>
+    <div class="row" ng-controller="HomeController" ng-repeat="pizzas in pizzaList">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+            <figure id="thumb" class="thumbnail">
+                <img src="{{pizzas.Img}}" alt="{{pizzas.Nome}}">
+                <div class=" text-center">
+                    <h3 class="nome-pizza">{{pizzas.Nome}}</h3>
+                    <p>{{pizzas.Ingredientes}}</p>
+                    <p><a href="#" class="btn btn-primary btn-lg" role="button">Quero Essa!</a> </p>
+                </div>
+            </figure>
+        </div>
+    </div>
 </section>
