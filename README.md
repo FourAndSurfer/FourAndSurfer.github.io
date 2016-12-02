@@ -1,3 +1,30 @@
+# LEIAM ISTO
+
+É necessário ter o [NodeJS](https://nodejs.org/dist/v6.9.1/node-v6.9.1-x64.msi) instalado e o phonegap também!!!
+
+Para que o projeto funcione na máquina de vocês é necessário adicionar as plataformas de android.
+
+Digite na linha de comando dentro da pasta do projeto
+```shell
+$ phonegap platform add android
+```
+
+Rode este comando para instalar os pacotes necessários para aplicação rodar.
+```shell
+$ npm install -g yo gulp generator-mobileangularui bower
+```
+
+Depois de tudo instalado digite os seguintes comandos:
+```shell
+$ npm install
+$ bower install
+```
+
+Para rodar o projeto em Android
+```shell
+$ phonegap run android
+```
+
 # Hello World PhoneGap Template [![bitHound Score][bithound-img]][bithound-url]
 
 A PhoneGap Hello World template
