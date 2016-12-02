@@ -1,15 +1,60 @@
+<!-- nav tabs -->
+<ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation" class="active"><a href="#pizza" aria-controls="home" role="tab" data-toggle="tab">Pizzas</a></li>
+    <li role="presentation"><a href="#bebida" aria-controls="profile" role="tab" data-toggle="tab">Bebidas</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Sobremesas</a></li>
+</ul>
+<!-- nav tabs -->
+
+
 <section class="section container-fluid">
     <h1 class="page-header">Welcome to Pizzaria</h1>
-    <div class="row" ng-controller="HomeController" ng-repeat="pizzas in pizzaList">
-        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-            <figure id="thumb" class="thumbnail">
-                <img src="{{pizzas.Img}}" alt="{{pizzas.Nome}}">
-                <div class=" text-center">
-                    <h3 class="nome-pizza">{{pizzas.Nome}}</h3>
-                    <p>{{pizzas.Ingredientes}}</p>
-                    <p><a href="#" class="btn btn-primary btn-lg" role="button">Quero Essa!</a> </p>
-                </div>
-            </figure>
+    <!--  Menu Pizzas  -->
+    <div role="tabpanel" class="tab-pane active" id="pizza">
+        <div class="row" ng-controller="HomeController" ng-repeat="pizzas in pizzaList">
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                <figure id="thumb" class="thumbnail">
+                    <img src="{{pizzas.Img}}" alt="{{pizzas.Nome}}">
+                    <div class=" text-center">
+                        <h3 class="nome-pizza">{{pizzas.Nome}}</h3>
+                        <p>{{pizzas.Ingredientes}}</p>
+                        <p><a href="#" class="btn btn-primary btn-lg" role="button">Quero Essa!</a> </p>
+                    </div>
+                </figure>
+            </div>
         </div>
     </div>
+
+    <!--  Menu Pizzas  -->
+    <div role="tabpanel" class="tab-pane" id="bebida">
+        <div class="row" ng-controller="HomeController" ng-repeat="bebidas in bebidasList">
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                <figure id="thumb" class="thumbnail">
+                    <img src="{{bebidas.Img}}" alt="coca cola">
+                    <div class="text-center">
+                        <h3 class="nome-pizza">{{bebidas.nome}}</h3>
+                        <p>{{bebidas.descricao}}</p>
+                        <p><a href="#" class="btn btn-primary btn-lg" role="button">Quero Essa!</a></p>
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="sobremesa">
+        <div class="row" ng-controller="HomeController" ng-repeat="sobremesa in sobremesaList">
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                <figure id="thumb" class="thumbnail">
+                    <img src="{{sobremesas.Img}}" alt="coca cola">
+                    <div class="text-center">
+                        <h3 class="nome-pizza">{{sobremesas.nome}}</h3>
+                        <p>{{sobremesas.descricao}}</p>
+                        <p><a href="#" class="btn btn-primary btn-lg" role="button">Quero Essa!</a></p>
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+
 </section>
