@@ -83,7 +83,6 @@
         <icon height="159" platform="wp8" src="www/img/logo.png" width="159" />
         <splash height="1280" platform="wp8" src="www/res/screen/wp8/screen-portrait.jpg" width="768" />
     </platform>
-
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -99,4 +98,5 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="android" spec="~6.0.0" />
+    <engine name="browser" spec="~4.1.0" />
 </widget>

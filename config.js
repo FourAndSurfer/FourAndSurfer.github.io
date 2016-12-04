@@ -96,7 +96,7 @@ module.exports = function(config) {
    * 	 ['./src/less/app.less', './src/less/responsive.less']
    */
 
-  // config.less.src.push('src/less/mystyle.less');
+   config.less.src.push('src/less/test.less');
 
   /**
    * Less search paths
