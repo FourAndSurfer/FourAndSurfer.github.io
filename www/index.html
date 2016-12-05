@@ -3,75 +3,59 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <title>Pizzaria</title>
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
-    <title>Nameless</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+    <link rel="stylesheet" href="css/app.min.css" />
+    <link rel="stylesheet" href="css/responsive.min.css" />
+    <link rel="stylesheet" href="css/pizza.css">
+    <script src="http://localhost:8001/target/target-script-min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/app.min.js"></script>
 </head>
 
-<body>
+<body ng-app="Pizzaria" ng-controller="MainController">
+
+    <!-- Sidebars -->
+    <div ng-include="'sidebar.html'" ui-track-as-search-param='true' class="sidebar sidebar-left"></div>
+
     <div class="app">
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-        
-      </button>
-      <a class="navbar-brand" href="#">Pizzaria</a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Cardápio</a></li>
-        <li><a href="sobre.html">Sobre nós</a></li>
-        <li><a href="#">Carrinho</a></li>
-        <li><a href="localizacao.html">Contato</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-        <div id="index1" class="container index">
-            <div id="texto-index" class="container text-center">
-                <h3>Compre sua pizza</h3>
-                <p>Os mais variados sabores!</p>
+        <!-- Navbars -->
+
+        <div class="navbar navbar-app navbar-absolute-top">
+            <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+                Pizzaria
             </div>
-        </div>
-        <div id="index2" class="container index">
-            <div id="texto-index" class="container text-center">
-                <h3>Onde Estamos</h3>
-                <p>Encontre nossa filial mais próxima!</p>
-            </div>
-        </div>
-        <div id="index3" class="container index">
-            <div id="texto-index" class="container text-center">
-                <h3>Entre em contato</h3>
-                <p>Todas as formas de entrar em contato conosco!</p>
+            <div class="btn-group pull-left">
+                <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
             </div>
         </div>
 
+        <div class="navbar navbar-app navbar-absolute-bottom">
+            <div class="btn-group justified">
+                <a href="http://mobileangularui.com/" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i> Docs</a>
+                <a href="https://github.com/mcasimir/mobile-angular-ui" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> Sources</a>
+                <a href="https://github.com/mcasimir/mobile-angular-ui/issues" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar"></i> Issues</a>
+            </div>
+        </div>
 
+        <!-- App Body -->
+        <div class="app-body">
+            <div class="app-content">
+                <ng-view></ng-view>
+            </div>
+        </div>
 
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script type="text/javascript">
-        app.initialize();
+    <!-- ~ .app -->
 
-    </script>
+    <div ui-yield-to="modals"></div>
 </body>
 
 </html>

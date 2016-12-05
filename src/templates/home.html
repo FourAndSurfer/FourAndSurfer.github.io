@@ -1,0 +1,60 @@
+<section class="section container-fluid" ng-controller="HomeController as homeController">
+    <!-- nav tabs -->
+    <div ui-state="activeTab" default="1">
+        <ul class="nav nav-tabs">
+            <!-- nav-justified -->
+            <li ui-class="{'active':activeTab==1}"><a ui-set="{'activeTab':1}">Pizzas    </a></li>
+            <li ui-class="{'active':activeTab==2}"><a ui-set="{'activeTab':2}">Bebidas   </a></li>
+            <li ui-class="{'active':activeTab==3}"><a ui-set="{'activeTab':3}">Sobremesas</a></li>
+        </ul>
+    </div>
+    <!-- nav tabs -->
+    <!--  Menu Pizzas  -->
+    <div ui-if="activeTab == 1">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat="pizzas in homeController.pizzaList">
+                <figure id="thumb" class="thumbnail">
+                    <img ng-src="{{pizzas.Img}}" alt="{{pizzas.Nome}}">
+                    <div class=" text-center">
+                        <h3 class="nome-pizza">{{pizzas.Nome}}</h3>
+                        <p>{{pizzas.Ingredientes}}</p>
+                        <p><a href="#" class="btn btn-primary btn-lg" role="button">Quero Essa!</a> </p>
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <!--  Menu Pizzas  -->
+    <!--  Menu Bebidas  -->
+    <div ui-if="activeTab == 2">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat="bebidas in homeController.bebidaList">
+                <figure id="thumb" class="thumbnail">
+                    <img ng-src="{{bebidas.Img}}" alt="coca cola">
+                    <div class="text-center">
+                        <h3 class="nome-pizza">{{bebidas.Nome}}</h3>
+                        <p>{{bebidas.Descricao}}</p>
+                        <p><a href="#" class="btn btn-primary btn-lg" role="button">Quero Essa!</a></p>
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <!--  Menu Bebidas  -->
+    <!--  Menu Sobremesas  -->
+    <div ui-if="activeTab == 3">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat="sobremesas in homeController.sobremesaList">
+                <figure id="thumb" class="thumbnail">
+                    <img ng-src="{{sobremesas.Img}}" alt="coca cola">
+                    <div class="text-center">
+                        <h3 class="nome-pizza">{{sobremesas.Nome}}</h3>
+                        <p>{{sobremesas.Descricao}}</p>
+                        <p><a href="#" class="btn btn-primary btn-lg" role="button">Quero Essa!</a></p>
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <!--  Menu Sobremesas  -->
+</section>
