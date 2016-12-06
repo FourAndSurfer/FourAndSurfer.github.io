@@ -2,7 +2,7 @@
 <section class="section container-fluid scrollable" ng-controller="HomeController as homeController">
     <!-- nav tabs -->
     <div ui-state="activeTab" default="1" class="scrollable-header">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs nav-justified">
             <!-- nav-justified -->
             <li ui-class="{'active':activeTab==1}"><a ui-set="{'activeTab':1}">Pizzas    </a></li>
             <li ui-class="{'active':activeTab==2}"><a ui-set="{'activeTab':2}">Bebidas   </a></li>
@@ -10,10 +10,18 @@
         </ul>
     </div>
     <!-- nav tabs -->
+    <!--  Filtro  -->
+    <div class="row">
+        <div class="col-xs-12">
+            <form>
+                <input type="text" ng-model='filtro' ng-model-options="{debounce: 500}" class='form-control' placeholder="Filtrar">
+            </form>
+        </div>
+    </div>
     <!--  Menu Pizzas  -->
     <div ui-if="activeTab == 1" class="scrollable-content">
         <div class="row">
-            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="pizzas in homeController.pizzaList">
+            <div class="painel-animado col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="pizzas in homeController.pizzaList | filter: filtro">
                 <figure id="thumb" class="thumbnail">
                     <img ng-src="{{pizzas.Img}}" alt="{{pizzas.Nome}}">
                     <div class=" text-center">
@@ -29,7 +37,7 @@
     <!--  Menu Bebidas  -->
     <div ui-if="activeTab == 2" class="scrollable-content">
         <div class="row">
-            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="bebidas in homeController.bebidaList">
+            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="bebidas in homeController.bebidaList | filter: filtro">
                 <figure id="thumb" class="thumbnail">
                     <img ng-src="{{bebidas.Img}}" alt="coca cola">
                     <div class="text-center">
@@ -45,8 +53,8 @@
     <!--  Menu Sobremesas  -->
     <div ui-if="activeTab == 3" class="scrollable-content">
         <div class="row">
-            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="sobremesas in homeController.sobremesaList">
-                <figure id="thumb" class="thumbnail">
+            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="sobremesas in homeController.sobremesaList | filter: filtro">
+                <figure id="thumb" class="thumbnail ">
                     <img ng-src="{{sobremesas.Img}}" alt="coca cola">
                     <div class="text-center">
                         <h3 class="nome-pizza">{{sobremesas.Nome}}</h3>

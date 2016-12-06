@@ -1,6 +1,7 @@
 angular.module('PizzariaApp')
     .controller('HomeController', function ($scope) {
         var self = this;
+        $scope.filtro = '';
         self.pizzaList = [{
             Nome: "Calabresa",
             Ingredientes: "Mussarela, cebola, molho e orégano",
