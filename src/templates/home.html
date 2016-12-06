@@ -1,6 +1,6 @@
-<section class="section container-fluid" ng-controller="HomeController as homeController">
+<section class="section container-fluid scrollable" ng-controller="HomeController as homeController">
     <!-- nav tabs -->
-    <div ui-state="activeTab" default="1">
+    <div ui-state="activeTab" default="1" class="scrollable-header">
         <ul class="nav nav-tabs">
             <!-- nav-justified -->
             <li ui-class="{'active':activeTab==1}"><a ui-set="{'activeTab':1}">Pizzas    </a></li>
@@ -10,7 +10,7 @@
     </div>
     <!-- nav tabs -->
     <!--  Menu Pizzas  -->
-    <div ui-if="activeTab == 1">
+    <div ui-if="activeTab == 1" class="scrollable-content">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat="pizzas in homeController.pizzaList">
                 <figure id="thumb" class="thumbnail">
@@ -26,7 +26,7 @@
     </div>
     <!--  Menu Pizzas  -->
     <!--  Menu Bebidas  -->
-    <div ui-if="activeTab == 2">
+    <div ui-if="activeTab == 2" class="scrollable-content">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat="bebidas in homeController.bebidaList">
                 <figure id="thumb" class="thumbnail">
@@ -42,7 +42,7 @@
     </div>
     <!--  Menu Bebidas  -->
     <!--  Menu Sobremesas  -->
-    <div ui-if="activeTab == 3">
+    <div ui-if="activeTab == 3" class="scrollable-content">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat="sobremesas in homeController.sobremesaList">
                 <figure id="thumb" class="thumbnail">
