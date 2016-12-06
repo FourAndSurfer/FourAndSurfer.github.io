@@ -123,7 +123,8 @@ module.exports = function(config) {
    * @type {Array}
    */
 
-   // config.vendor.js.push('.bower_components/mylib/mylib.js');
+   config.vendor.js.push('src/js/localiza.js');
+   config.vendor.js.push('src/js/jquery-3.1.1.min.js');
 
   /**
    * Vendor Fonts

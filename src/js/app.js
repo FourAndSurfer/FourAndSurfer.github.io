@@ -7,4 +7,5 @@ angular.module('Pizzaria', [
 
 .config(function($routeProvider) {
     $routeProvider.when('/', { templateUrl: 'home.html', reloadOnSearch: false });
+    $routeProvider.when('/login', { templateUrl: 'login.html', reloadOnSearch: false });
 });
