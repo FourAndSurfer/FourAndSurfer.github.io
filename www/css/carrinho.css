@@ -1,0 +1,27 @@
+.logo {
+    font-size: 200px;
+}
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+}
+
+.jumbotron { 
+    background-color: #AA4B4B;  Orange 
+    color: rgba(250, 250, 250, 250, 0.9);
+    padding: 100px 25px;
+}
+
+.bg-grey {
+    background-color: #f6f6f6;
+}
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+#tableList{
+    display: none;
+}
