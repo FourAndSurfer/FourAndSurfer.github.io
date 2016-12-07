@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="css/pizza.css">
-<section class="" ng-controller="HomeController as homeCtrl" data-ng-init="homeCtrl.loadPizzasOnStart()">
+<section class="" ng-controller="HomeController as homeCtrl" data-ng-init="homeCtrl.loadPizzasOnStart();homeCtrl.caguei();">
    <div class="row">
         <div class="col-xs-12">
             <form class="input-group">
@@ -26,10 +26,10 @@
         <div class="row tab-pane fade" id="pizzas">
             <div class="painel-animado col-xs-10 col-xs-offset-1 col-sm-6 col-md-4 col-lg-4" ng-repeat="pizzas in homeCtrl.pizzaList | filter: filtro">
                 <figure id="thumb" class="thumbnail">
-                    <img ng-src="{{pizzas.Img}}" alt="{{pizzas.Nome}}">
+                    <img ng-src="{{pizzas.img}}" alt="{{pizzas.nome}}">
                     <div class=" text-center">
-                        <h3 class="nome-pizza">{{pizzas.Nome}}</h3>
-                        <p>{{pizzas.Ingredientes}}</p>
+                        <h3 class="nome-pizza">{{pizzas.nome}}</h3>
+                        <p>{{pizzas.ingredientes}}</p>
                         <p><a href="#" class="btn btn-primary btn" role="button">Quero Essa!</a> </p>
                     </div>
                 </figure>

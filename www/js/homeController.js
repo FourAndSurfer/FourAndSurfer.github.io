@@ -1,19 +1,21 @@
 angular.module('PizzariaApp')
-        .controller('HomeController', function ($scope) {
+        .controller('HomeController', function ($scope, DbFactory) {
                 var self = this;
                 $scope.filtro = '';
                 self.loadPizzasOnStart = function () {
                         $('.nav-tabs a:first').tab('show');
                 };
                 self.pizzaList = [{
-                        Nome: "Calabresa",
-                        Ingredientes: "Mussarela, cebola, molho e orégano",
-                        Img: "img/calabresa.png"
+                        nome: "Calabresa",
+                        ingredientes: "Mussarela, cebola, molho e orégano",
+                        img: "img/calabresa.png"
                 }, {
-                        Nome: "Marguerita",
-                        Ingredientes: "Mussarela, molho, orégano, tomate e manjericão",
-                        Img: "img/margherita.png"
+                        nome: "Marguerita",
+                        ingredientes: "Mussarela, molho, orégano, tomate e manjericão",
+                        img: "img/margherita.png"
                 }];
+                self.pizzaList = DbFactory.pizzas();
+                self.caguei = function() { console.log(self.pizzaList);console.log(DbFactory.pizzas());};
                 self.bebidaList = [{
                         Nome: "Coca-cola",
                         Descricao: "Refrigerante 2 litros",
