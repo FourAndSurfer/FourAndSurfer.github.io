@@ -12,4 +12,12 @@ angular.module('PizzariaApp', [
         templateUrl: 'login.html',
         reloadOnSearch: false
     });
+    $routeProvider.when('/sobre', {
+        templateUrl: 'sobre.html',
+        reloadOnSearch: false
+    });
+    $routeProvider.when('/contato', {
+        templateUrl: 'contato.html',
+        reloadOnSearch: false
+    });
 });
