@@ -12,4 +12,8 @@ angular.module('PizzariaApp', [
         templateUrl: 'login.html',
         reloadOnSearch: false
     });
+    $routeProvider.when('/carrinho', {
+        templateUrl: 'carrinho.html',
+        reloadOnSearch: false
+    });
 });
