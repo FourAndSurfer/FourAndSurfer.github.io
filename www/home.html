@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="css/pizza.css">
-<section class="section container-fluid scrollable" ng-controller="HomeController as homeController">
+<section class="section container-fluid" ng-controller="HomeController as homeCtrl" data-ng-init="homeCtrl.loadPizzasOnStart()">
     <!-- nav tabs -->
-    <div ui-state="activeTab" default="1" class="scrollable-header">
+    <div>
         <ul class="nav nav-tabs nav-justified">
             <!-- nav-justified -->
-            <li ui-class="{'active':activeTab==1}"><a ui-set="{'activeTab':1}">Pizzas    </a></li>
-            <li ui-class="{'active':activeTab==2}"><a ui-set="{'activeTab':2}">Bebidas   </a></li>
-            <li ui-class="{'active':activeTab==3}"><a ui-set="{'activeTab':3}">Sobremesas</a></li>
+            <li><a showtab="" href="#pizzas">Pizzas    </a></li>
+            <li><a showtab="" href="#bebidas">Bebidas   </a></li>
+            <li><a showtab="" href="#sobremesas">Sobremesas</a></li>
         </ul>
     </div>
     <!-- nav tabs -->
@@ -18,10 +18,11 @@
             </form>
         </div>
     </div>
-    <!--  Menu Pizzas  -->
-    <div ui-if="activeTab == 1" class="scrollable-content">
-        <div class="row">
-            <div class="painel-animado col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="pizzas in homeController.pizzaList | filter: filtro">
+    <!-- Tab Content -->
+    <div class="tab-content">
+        <!--  Menu Pizzas  -->
+        <div class="row tab-pane fade" id="pizzas">
+            <div class="painel-animado col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="pizzas in homeCtrl.pizzaList | filter: filtro">
                 <figure id="thumb" class="thumbnail">
                     <img ng-src="{{pizzas.Img}}" alt="{{pizzas.Nome}}">
                     <div class=" text-center">
@@ -32,12 +33,10 @@
                 </figure>
             </div>
         </div>
-    </div>
-    <!--  Menu Pizzas  -->
-    <!--  Menu Bebidas  -->
-    <div ui-if="activeTab == 2" class="scrollable-content">
-        <div class="row">
-            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="bebidas in homeController.bebidaList | filter: filtro">
+        <!--  Menu Pizzas  -->
+        <!--  Menu Bebidas  -->
+        <div class="row tab-pane fade" id="bebidas">
+            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="bebidas in homeCtrl.bebidaList | filter: filtro">
                 <figure id="thumb" class="thumbnail">
                     <img ng-src="{{bebidas.Img}}" alt="coca cola">
                     <div class="text-center">
@@ -48,12 +47,10 @@
                 </figure>
             </div>
         </div>
-    </div>
-    <!--  Menu Bebidas  -->
-    <!--  Menu Sobremesas  -->
-    <div ui-if="activeTab == 3" class="scrollable-content">
-        <div class="row">
-            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="sobremesas in homeController.sobremesaList | filter: filtro">
+        <!--  Menu Bebidas  -->
+        <!--  Menu Sobremesas  -->
+        <div class="row tab-pane fade" id="sobremesas">
+            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4" ng-repeat="sobremesas in homeCtrl.sobremesaList | filter: filtro">
                 <figure id="thumb" class="thumbnail ">
                     <img ng-src="{{sobremesas.Img}}" alt="coca cola">
                     <div class="text-center">
@@ -64,8 +61,8 @@
                 </figure>
             </div>
         </div>
+        <!--  Menu Sobremesas  -->
     </div>
-    <!--  Menu Sobremesas  -->
 </section>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
