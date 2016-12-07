@@ -19,8 +19,13 @@
         <li><a href="#/sobre">Quem Somos</a></li>
         <li><a href="#/contato">Contato</a></li>
       </ul>
-      </div>
-      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.navbar-collapse -->
   </div>
   <!-- /.container-fluid -->
+  <script>
+    $('.nav a').on('click', function() {
+      $('.navbar-toggle').click() //bootstrap 3.x by Richard
+    });
+  </script>
 </nav>
