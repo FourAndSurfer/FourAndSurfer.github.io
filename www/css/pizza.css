@@ -1,14 +1,19 @@
 .thumbnail {
     /*    background-color: #e51937;*/
-    background-image: linear-gradient(to top, #f0455d, #e51937)
+/*    background-color: white;*/
+    background-image: linear-gradient(to top, #FFE4AB , #FFD77F)
 }
 
 .nome-pizza {
-    background-color: white;
+    background-color: darkred;
     width: 100%;
+    border-radius: 0px 5px;
 }
 
 .thumbnail p {
+    color: black;
+}
+.thumbnail h3 {
     color: white;
 }
 
@@ -33,4 +38,18 @@
 
 .painel-animado {
     transition: transform 0.5s;
+}
+body{
+    background-color: darkred;
+}
+.nav{
+    background-color: white;
+    width: 100%;
+}
+#nav{
+    margin-bottom: 5px;
+    border-radius: 0px;
+}
+#filtro{
+    border-radius: 0px;
 }
