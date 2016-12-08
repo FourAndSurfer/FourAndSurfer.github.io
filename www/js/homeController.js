@@ -14,8 +14,29 @@ angular.module('PizzariaApp')
                         ingredientes: "Mussarela, molho, orégano, tomate e manjericão",
                         img: "img/margherita.png"
                 }];
-                self.pizzaList = DbFactory.pizzas();
-                self.caguei = function() { console.log(self.pizzaList);console.log(DbFactory.pizzas());};
+                // self.pizzaList = [];
+                // self.pizzaList = DbFactory.pizzas;
+                self.caguei = function () {
+                        console.log("caguei");
+                        console.log($scope.pizzas);
+                        console.log(self.pizzaList);
+                        console.log(DbFactory.pizzas);
+                };
+                // var loadPizzas = function () {
+                //         DbFactory.pizzas(function (pizzas) {
+                //                 angular.forEach(pizzas, function (pizza) {
+                //                         console.log("pizza foreach");
+                //                         console.log(pizza);
+                //                         self.pizzaList.push(pizza);
+                //                 });
+                //         });
+                //         console.log(self.pizzaList);
+                // }
+                self.loadCardapio = function () {
+                        // loadPizzas();
+                        console.log("loadPizzas");
+                        console.log(self.pizzaList);
+                }
                 self.bebidaList = [{
                         Nome: "Coca-cola",
                         Descricao: "Refrigerante 2 litros",

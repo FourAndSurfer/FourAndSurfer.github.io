@@ -18,21 +18,16 @@ angular.module("PizzariaApp")
                     i;
                 for (i = 0; i < len; i++) {
                     console.log(results.rows.item(i));
-                    // pizzas.push(results.rows.item(i));
-                    pizzas.push({
-                        nome: results.rows.item(i).nome,
-                        ingredientes: results.rows.item(i).ingredientes,
-                        img: results.rows.item(i).img,
-                        preco: results.rows.item(i).preco
-                    });
+                    pizzas.push(results.rows.item(i));
                 }
                 console.log(pizzas);
             });
         });
 
         return {
-            pizzas: function () {
-                return pizzas;
-            }
+            // pizzas: function (callback) {
+            //     callback(pizzas);
+            // }
+            pizzas: pizzas
         };
     });
