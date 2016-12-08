@@ -1,14 +1,18 @@
-<link rel="stylesheet" href="css/carrinho.css">
-<section class="" ng-controller="HomeController as homeCtrl">
-    <div class="listaPizza">
-        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="pizzas in homeCtrl.pizzaList">
-                <div>
-                    <h4 class="list-group-item-heading">{{pizzas.Nome}}</h4>
-                    <p class="list-group-item-text"><img width="30%" ng-src="{{pizzas.Img}}" alt="{{pizzas.Nome}}">  {{pizzas.Ingredientes}}</p>
-                    <span class="badge">14</span>
-                </div>  
-            </li>
-        </ul>
-    </div>
-</section>
+                <section class="" ng-controller="HomeController as homeCtrl"">
+
+                <div class="listaPizza" >
+                    <table class="table table-striped">
+                                   
+                  <tbody ng-repeat="pizzas in homeCtrl.pizzaList">
+                    <tr>
+                      <td class="col-xs-2"><img width="100%" ng-src="{{pizzas.img}}" alt="{{pizzas.nome}}"></td>
+                      <td class="col-xs-2" style="text-align:left"><p><strong>{{pizzas.nome}}</strong><br /> Brotinho</p></td>
+                      <td class="col-xs-2">R$16.90</td>
+                      <td class="col-xs-2" style="text-align:center"><span class="badge">1</span></td>
+                      <td class="col-xs-2"><button class="glyphicon glyphicon-trash btn btn-danger btn-xs" alt="Remover do carrinho"></button></td>
+                    </tr>
+                    <tr>
+                  </tbody>
+                </table>
+                </div> 
+                </section>
