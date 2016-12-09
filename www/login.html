@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="css/login.css">
-   <div ng-controller='login'>
+<script src="js/login.js"></script>
+<div ng-controller='login'>
     <div class="jumbotron container text-center">
         Login
     </div>
@@ -14,10 +15,14 @@
                     <label for="exampleInputPassword1">Senha</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
                 </div>
-                <button class="btn btn-default">Entrar</button>
-                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalCadastro">Cadastrar</button><br/>
-                <a href="">Esqueci minha senha</a>
+                <div align="center">
+                    <button class="btn btn-default">Entrar</button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalCadastro">Cadastrar</button><br/>
+                    <a href="">Esqueci minha senha</a>
+                </div>
             </form>
+            <button id="btnFace" class="btn btn-primary center-block"><span class=""><img id="lface" src="img/loginface.png" alt="" class=""> Login pelo Facebook</span></button>
+
         </div>
     </div>
     <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
