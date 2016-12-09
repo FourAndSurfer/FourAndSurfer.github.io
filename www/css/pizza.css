@@ -1,13 +1,13 @@
 .thumbnail {
     /*    background-color: #e51937;*/
 /*    background-color: white;*/
-    background-image: linear-gradient(to top, #FFE4AB , #FFD77F)
+    background-image: linear-gradient(to top, #550000, #550000)
 }
 
 .nome-pizza {
-    background-color: darkred;
+    background-color: #C83D3D;
     width: 100%;
-    border-radius: 0px 5px;
+    border-radius: 100px;
 }
 
 .thumbnail p {
@@ -21,6 +21,8 @@
     margin-top: auto;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    
+   
 }
 
 #thumb p {
@@ -28,8 +30,7 @@
 }
 
 #thumb {
-    border: 0.5 solid black;
-    border-radius: 18px;
+    border-radius: 100px;
 }
 
 .painel-animado.ng-leave-active {
