@@ -9,28 +9,24 @@
 #contatos {
     width: 100%;
     height: auto;
-    background-color: #27BF00;
     position: relative;
     top: 80%;
+    color: white;
 }
 
 p {
     font-family: serif;
     font-size: 20px;
-    color:rgba(255,250,240,0.7);
+    color: white;
 }
 
 #table {
     border: 0;
-    color:rgba(255,250,240,0.7);
+    color: rgba(255, 250, 240, 0.7);
 }
 
 body {
     overflow: hidden;
-    background-color: #935a55;
 }
 
-#quemSomos{
-            background-color: #fff;
-
-}
+#quemSomos {}

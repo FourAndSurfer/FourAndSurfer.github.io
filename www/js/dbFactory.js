@@ -12,7 +12,7 @@ angular.module("PizzariaApp")
         //     tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 1, "Calabresa", "Mussarela, cebola, molho e orégano", "img/calabresa.png", 20.00 WHERE NOT EXISTS (SELECT 1 FROM pizzas WHERE id = 1 AND nome = "Calabresa")');
         //     tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 2, "Margherita", "Mussarela, molho, orégano, tomate e manjericão", "img/margherita.png", 20.00 WHERE NOT EXISTS (SELECT 1 FROM pizzas WHERE id = 2 AND nome = "Margherita")');
         // });
-        
+
         var promise = $timeout(function () {
             console.log('loaded');
             response.pizzas = [];
@@ -38,7 +38,7 @@ angular.module("PizzariaApp")
                     console.log(response.pizzas);
                 });
             });
-        }, 5000);
+        }, 1000);
         alert('test');
         response.load = function () {
             return promise;
