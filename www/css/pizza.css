@@ -1,6 +1,6 @@
-.thumbnail {
-    background-image: linear-gradient(to top, #550000, #550000)
-}
+    .thumbnail {
+        background-image: linear-gradient(to top, #550000, #550000)
+    }
 
 .nome-pizza {
     background-color: #C83D3D;
@@ -38,9 +38,24 @@
     transition: transform 0.5s;
 }
 
-body {
-    background-color: darkred;
+
+html {
+
+    background-image: linear-gradient(to bottom, #670000, #D30000);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+
 }
+body {
+
+    background-image: linear-gradient(to bottom, #670000, #D30000);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+
+}
+
 
 .nav {
     background-color: white;
@@ -61,4 +76,9 @@ table {
 
 #divContato {
     color: white;
+}
+#logo{
+    width: 50%;
+    height: auto;
+    margin-bottom: 5%;
 }

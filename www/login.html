@@ -1,15 +1,53 @@
 <link rel="stylesheet" href="css/login.css">
-<script src="js/login.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+        FB.init({
+        appId: '100948877060066',
+        cookie: true,
+        status: true,
+        xfbml: true
+    });
+    function teste(id){
+
+
+    }
+     FB.Event.subscribe('auth.authResponseChange', function(response){
+       var id = '';
+        if (response.status == 'connected'){
+            FB.api('/me', function(response){
+                id = response.id;
+                    $('#teste').text("logado como: "+response.name);
+//                $('#nome1').html(response.name);
+                console.log(response);
+            teste(id);
+            });
+
+
+        } else if (response.status == 'not_authorized'){
+            FB.login();
+            $('#teste').text("Usuário");
+        } else{
+
+            $('#teste').text("Usuário");
+        }
+    });
+    FB.login(function(response){
+  console.log(response);
+});
+</script>
+
 <div ng-controller='login'>
-    <div class="jumbotron container text-center">
-        Login
+    <div class="container text-center">
+        <figure>
+            <img id="logo" src="img/logo1.png" alt="">
+        </figure>
     </div>
     <div class="container">
         <div class="panel panel-default">
             <form class="panel-body">
-                <div class="form-group">
-                    <label for="Email">Usuário</label>
-                    <input type="email" class="form-control" id="Email" placeholder="Email cadastrado">
+                <div  class="form-group">
+                    <label id='teste' for="Email">Usuário</label>
+                    <input id="teste" type="email" class="form-control" id="Email" placeholder="Email cadastrado">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Senha</label>
@@ -21,10 +59,20 @@
                     <a href="">Esqueci minha senha</a>
                 </div>
             </form>
-            <button id="btnFace" class="btn btn-primary center-block"><span class=""><img id="lface" src="img/loginface.png" alt="" class=""> Login pelo Facebook</span></button>
+            <div id="nome1" class="container">
+        <fb:login-button align="center" class="" scope="public_profile, email" autologoutlink="true">
+
+        </fb:login-button>
+
+        </div >
 
         </div>
-    </div>
+<!--            <button id="btnFace" class="btn btn-primary center-block"><span class=""><img id="lface" src="img/loginface.png" alt="" class=""> Login pelo Facebook</span></button>-->
+        </div>
+
+
+    <!--    MODAL INICIO    -->
+
     <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

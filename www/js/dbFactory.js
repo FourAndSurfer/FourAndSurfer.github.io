@@ -38,8 +38,8 @@ angular.module("PizzariaApp")
                     console.log(response.pizzas);
                 });
             });
-        }, 1000);
-        alert('test');
+        }, 500);
+//        alert('test');
         response.load = function () {
             return promise;
         };

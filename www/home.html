@@ -23,20 +23,93 @@
         <!-- nav tabs -->
         <!--  Filtro  -->
         <!--  Filtro  -->
-        <div align="center">
-            <img align="center" src="img/logo1.png" style=" width:50%; margin-top:18px; ">
-            <br /><br />
-
-            <img src="img/pizza.png" width="60%">
-            <p><a href="#" class="btn btn-primary btn" role="button">Quero Essa!</a> </p>
-
-            <img src="img/pizza2.png" width="60%">
-            <p><a href="#" class="btn btn-primary btn" role="button">Quero Essa!</a> </p>
-        </div>
-
-
         <div class="tab-content"><br/>
             <!--  Menu Pizzas  -->
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="headingOne" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <h4 class="panel-title">
+                            <span >
+          Calabresa
+        </span>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <table class="table-responsive" style="border: 0px; width: 100%;">
+                                <tr>
+                                    <td>
+                                        <img class="img-responsive" style="border-radius:10px;" src="img/pizzas/calabresa.png" alt="">
+                                    </td>
+                                    <td>
+                                        <p class="text-center"> Mussarela, cebola, molho e orégano.</p>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary btn"  role="button">Add</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                 <div class="panel panel-default">
+                    <div class="panel-heading" id="headingtwo" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsetwo" aria-expanded="false" aria-controls="collapsetwo">
+                        <h4 class="panel-title">
+                            <span >
+          Margherita
+        </span>
+                        </h4>
+                    </div>
+                    <div id="collapsetwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingtwo">
+                        <div class="panel-body">
+                            <table class="table-responsive" style="border: 0px; width: 100%;">
+                                <tr>
+                                    <td>
+                                        <img class="img-responsive" style="border-radius:10px;" src="img/pizzas/margherita.png" alt="">
+                                    </td>
+                                    <td>
+                                        <p class="text-center"> Mussarela, molho, orégano, tomate e manjericão.</p>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary btn"  role="button">Add</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="headingtree" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsetree" aria-expanded="false" aria-controls="collapsetree">
+                        <h4 class="panel-title">
+                            <span >
+          Portuguesa
+        </span>
+                        </h4>
+                    </div>
+                    <div id="collapsetree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingtree">
+                        <div class="panel-body">
+                            <table class="table-responsive" style="border: 0px; width: 100%;">
+                                <tr>
+                                    <td>
+                                        <img class="img-responsive" style="border-radius:10px;" src="img/pizzas/portuguesa.png" alt="">
+                                    </td>
+                                    <td>
+                                        <p class="text-center"> Mussarela, Cebola, Pimentão, Presunto, Azeitona preta, Molho, Orégano e Ovo de codorna fatiado.</p>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary btn"  role="button">Add</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
             <div class="row tab-pane fade" id="pizzas">
                 <div class="painel-animado col-xs-10 col-xs-offset-1 col-sm-6 col-md-4 col-lg-4" ng-repeat="pizzas in homeCtrl.pizzaList | filter: filtro">
                     <figure id="thumb" class="thumbnail">
