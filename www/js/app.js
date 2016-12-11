@@ -11,6 +11,7 @@ angular.module('PizzariaApp', [
     $routeProvider.when('/login', {
         templateUrl: 'login.html',
         reloadOnSearch: false
+//        controller: "CadastroController"
     });
     $routeProvider.when('/carrinho', {
         templateUrl: 'carrinho.html',

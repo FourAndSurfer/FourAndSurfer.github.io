@@ -83,45 +83,45 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="nome" class="input-sm">Nome</label>
-                            <input type="text" class="form-control input-sm" id="nome" placeholder="nome">
+                            <label ng-model="cliente.nome" for="nome" class="input-sm">Nome</label>
+                            <input type="text" class="form-control input-sm" name="nome" id="nome" placeholder="nome">
                         </div>
                         <div class="form-group">
                             <label for="email" class="input-sm">Email</label>
                             <div class="input-group">
                                 <div class="input-group-addon input-sm">@</div>
-                                <input type="email" class="form-control input-sm" id="email" placeholder="Email">
+                                <input ng-model="cliente.email" name="email" type="email" class="form-control input-sm" id="email" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="endereço" class="input-sm">Telefones</label>
                             <div class="input-group">
                                 <a class="btn input-group-addon input-sm"><i class="glyphicon glyphicon-earphone"></i></a>
-                                <input type="number" class="form-control" id="tel" placeholder="telefone">
+                                <input ng-model="cliente.telefone" name="telefone" type="number" class="form-control" id="tel" placeholder="telefone">
                             </div>
                             <div class="input-group">
                                 <a class="btn input-group-addon input-sm"><i class="glyphicon glyphicon-phone"></i></a>
-                                <input type="number" class="form-control " id="cel" placeholder="celular">
+                                <input ng-model="cliente.celular" name="celular" type="number" class="form-control " id="cel" placeholder="celular">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="endereço" class="input-sm">Endereço</label>
                             <button id="localiza">Descubra minha localização</button>
-                            <input type="text" class="form-control input-sm" id="endereco" placeholder="Rua">
-                            <input type="text" class="form-control input-sm" id="complemento" placeholder="Complemento">
-                            <input type="text" class="form-control input-sm" id="bairro" placeholder="Bairro">
+                            <input ng-model="cliente.endereco" name="endereco" type="text" class="form-control input-sm" id="endereco" placeholder="Rua">
+                            <input ng-model="cliente.complemento" name="complemento" type="text" class="form-control input-sm" id="complemento" placeholder="Complemento">
+                            <input ng-model="cliente.bairro" name="bairro" type="text" class="form-control input-sm" id="bairro" placeholder="Bairro">
                             <div class="input-group">
-                                <input type="text" class="form-control input-sm" id="cep" placeholder="CEP" maxlength="8">
+                                <input ng-model="cliente.cep" name="cep" type="text" class="form-control input-sm" id="cep" placeholder="CEP" maxlength="8">
                                 <a class="btn input-group-addon input-sm">X</a>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Password" class="input-sm">Senha</label>
-                            <input type="password" class="form-control input-sm" id="Password" placeholder="Senha">
+                            <input ng-model="cliente.senha" name="senha" type="password" class="form-control input-sm" id="Password" placeholder="Senha">
                         </div>
                         <div class="checkbox">
                             <label>
-                                     <input type="checkbox" checked>Desejo receber informações e promoções por e-mail.
+                                     <input ng-model="cliente.info" name="info" type="checkbox" checked>Desejo receber informações e promoções por e-mail.
                                 </label>
                         </div>
                     </form>
