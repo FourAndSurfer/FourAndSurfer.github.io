@@ -12,13 +12,13 @@
 
     }
      FB.Event.subscribe('auth.authResponseChange', function(response){
-       var id = '';
+
         if (response.status == 'connected'){
             FB.api('/me', function(response){
-                id = response.id;
+
+                alert("ide do usuário é: "+ response.id);
                     $('#teste').text("logado como: "+response.name);
-//                $('#nome1').html(response.name);
-                console.log(response);
+
             teste(id);
             });
 
@@ -32,7 +32,7 @@
         }
     });
     FB.login(function(response){
-  console.log(response);
+//         console.log(response);
 });
 </script>
 
