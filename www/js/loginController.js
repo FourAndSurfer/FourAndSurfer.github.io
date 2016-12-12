@@ -97,16 +97,16 @@ angular.module('PizzariaApp').controller('login', function () {
                     locale: 'en_US',
                     fields: 'name, email'
                 }, function (response) {
-
-                    /*alert("ide do usuário é: "+ response.id);*/
                     console.log(response);
-                    $('#usuario').text(response.name);
+                    $('#loginesenha').html('<p>Olá <strong>' + response.name + '</strong> para conseguir-mos entregar sua pizza, complete seu cadastro!</p>');
+                    $('#btnEntrar').hide();
+                    $('#btnCadastrar').removeClass('btn-default');
+                    $('#btnCadastrar').addClass('btn-primary');
+                    $('#nome').val(response.name);
                     $('#email').val(response.email);
 
-                    teste(response.id);
-                    FB.api('/' + response.id, function (response) {
-                        console.log(response);
-                    });
+                    //                    document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true"></fb:login-button>'
+
                 });
 
 
@@ -114,8 +114,10 @@ angular.module('PizzariaApp').controller('login', function () {
                 FB.login();
 
             } else {
-                $('#usuario').text('Usuário');
-                $('#email').val('');
+                $('#loginesenha').html('<div class="form-group">                        <label id="usuario" for="Email">Usuário</label>                        <input id="email" type="email" class="form-control" id="Email" placeholder="Email cadastrado">                    </div>                    <div class="form-group">                        <label for="exampleInputPassword1">Senha</label>                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">                    </div>');
+
+                //                $('#usuario').text('Usuário');
+                //                $('#email').val('');
             }
         });
         document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true">Login pelo Facebook</fb:login-button>'
