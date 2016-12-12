@@ -10,7 +10,8 @@ angular.module('PizzariaApp', [
     });
     $routeProvider.when('/login', {
         templateUrl: 'login.html',
-        reloadOnSearch: false
+        reloadOnSearch: false,
+        controller: "login"
 //        controller: "CadastroController"
     });
     $routeProvider.when('/carrinho', {

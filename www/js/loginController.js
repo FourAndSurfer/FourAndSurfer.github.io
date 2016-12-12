@@ -79,8 +79,51 @@ angular.module('PizzariaApp').controller('login', function () {
             }
         });
     }
+
+
+    //    facebook
+
+    var init = function () {
+        FB.init({
+            appId: '100948877060066',
+            cookie: true,
+            status: true,
+            xfbml: true
+        });
+        FB.Event.subscribe('auth.authResponseChange', function (response) {
+
+            if (response.status == 'connected') {
+                FB.api('/me', {
+                    locale: 'en_US',
+                    fields: 'name, email'
+                }, function (response) {
+
+                    /*alert("ide do usuário é: "+ response.id);*/
+                    console.log(response);
+                    $('#usuario').text(response.name);
+                    $('#email').val(response.email);
+
+                    teste(response.id);
+                    FB.api('/' + response.id, function (response) {
+                        console.log(response);
+                    });
+                });
+
+
+            } else if (response.status == 'not_authorized') {
+                FB.login();
+
+            } else {
+                $('#usuario').text('Usuário');
+                $('#email').val('');
+            }
+        });
+        document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true">Login pelo Facebook</fb:login-button>'
+    }
+
+    init();
+
+
+
+
 });
-
-
-
-

@@ -1,74 +1,38 @@
 <link rel="stylesheet" href="css/login.css">
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<script>
-        FB.init({
-        appId: '100948877060066',
-        cookie: true,
-        status: true,
-        xfbml: true
-    });
-    function teste(id){
 
 
-    }
-     FB.Event.subscribe('auth.authResponseChange', function(response){
+    <div ng-controller='login'>
+        <div class="container text-center">
+            <figure>
+                <img id="logo" src="img/logo1.png" alt="">
+            </figure>
+        </div>
+        <div class="container">
+            <div class="panel panel-default">
+                <form class="panel-body">
+                    <div class="form-group">
+                        <label id="usuario" for="Email">Usuário</label>
+                        <input id="email" type="email" class="form-control" id="Email" placeholder="Email cadastrado">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Senha</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                    </div>
+                    <div align="center">
+                        <button class="btn btn-default">Entrar</button>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalCadastro">Cadastrar</button><br/>
+                        <!--                    <a href="">Esqueci minha senha</a>-->
+                    </div>
+                </form>
+                <div id="btnFace" align="center" class="container">
 
-        if (response.status == 'connected'){
-            FB.api('/me', function(response){
-
-                alert("ide do usuário é: "+ response.id);
-                    $('#teste').text("logado como: "+response.name);
-
-            teste(id);
-            });
 
 
-        } else if (response.status == 'not_authorized'){
-            FB.login();
-            $('#teste').text("Usuário");
-        } else{
+                </div>
 
-            $('#teste').text("Usuário");
-        }
-    });
-    FB.login(function(response){
-//         console.log(response);
-});
-</script>
-
-<div ng-controller='login'>
-    <div class="container text-center">
-        <figure>
-            <img id="logo" src="img/logo1.png" alt="">
-        </figure>
+            </div>
+        </div>
     </div>
-    <div class="container">
-        <div class="panel panel-default">
-            <form class="panel-body">
-                <div  class="form-group">
-                    <label id='teste' for="Email">Usuário</label>
-                    <input id="teste" type="email" class="form-control" id="Email" placeholder="Email cadastrado">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Senha</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-                </div>
-                <div align="center">
-                    <button class="btn btn-default">Entrar</button>
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalCadastro">Cadastrar</button><br/>
-                    <a href="">Esqueci minha senha</a>
-                </div>
-            </form>
-            <div id="nome1" class="container">
-        <fb:login-button align="center" class="" scope="public_profile, email" autologoutlink="true">
-
-        </fb:login-button>
-
-        </div >
-
-        </div>
-<!--            <button id="btnFace" class="btn btn-primary center-block"><span class=""><img id="lface" src="img/loginface.png" alt="" class=""> Login pelo Facebook</span></button>-->
-        </div>
 
 
     <!--    MODAL INICIO    -->
@@ -133,5 +97,5 @@
             </div>
         </div>
     </div>
-</div>
+
 <!-- modal -->
