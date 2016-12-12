@@ -119,6 +119,9 @@ angular.module('PizzariaApp').controller('login', function () {
                 //                $('#usuario').text('Usuário');
                 //                $('#email').val('');
             }
+            $('#btnEntrar').show();
+            $('#btnCadastrar').addClass('btn-default');
+            $('#btnCadastrar').removeClass('btn-primary');
         });
         document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true">Login pelo Facebook</fb:login-button>'
     }
