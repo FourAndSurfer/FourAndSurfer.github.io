@@ -8,8 +8,30 @@
             <p><strong>{{pizzas.nome}}</strong><br />{{pizzas.preco | currency:R$:2}}</p>
           </td>
 
-          <td class="col-xs-2" style="text-align:center"><br/><span class="badge">1</span></td>
-          <td class="col-xs-2"><br/><button class="glyphicon glyphicon-trash btn btn-danger btn-xs" alt="Remover do carrinho"></button></td>
+            <td class="col-xs-3" style="text-align:center">
+
+
+            <br/>
+            <div class="input-group">
+
+                <span class="input-group-btn">
+                <button class="btn btn-xs glyphicon glyphicon-minus"></button> <span id="badge" class="badge">1</span><div class="btn-group"><button class="btn btn-xs glyphicon glyphicon-plus"></button>
+                </span>
+            </div>
+
+
+<!--            </div>-->
+
+
+
+
+
+
+
+
+
+            </td>
+          <td class="col-xs-1"><br/><button class="glyphicon glyphicon-trash btn btn-danger btn-xs" alt="Remover do carrinho"></button></td>
         </tr>
         <tr>
             <td class="col-xs-4 text-right"><strong>Valor Total</strong><br/><span id="valorTotal"></span></td>

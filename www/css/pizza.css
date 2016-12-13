@@ -105,3 +105,8 @@ table {
     margin-bottom: 10px;
 
 }
+#badge{
+    border-radius: 0px;
+    background-color: white;
+    color: black;
+}
