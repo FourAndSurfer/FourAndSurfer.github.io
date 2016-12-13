@@ -1,11 +1,11 @@
-<section class="" ng-controller="HomeController as homeCtrl">
+<section class="" ng-controller="CartController as cartCtrl">
   <div class="listaPizza container">
     <table class="table table-striped">
       <tbody>
-        <tr ng-repeat="pizzas in homeCtrl.pizzaList">
-          <td class="col-xs-4"><img width="100%" ng-src="{{pizzas.img}}" alt="{{pizzas.nome}}"></td>
+        <tr ng-repeat="cartItem in cartCtrl.cart">
+          <td class="col-xs-4"><img width="100%" ng-src="{{cartItem.img}}" alt="{{cartItem.nome}}"></td>
           <td class="col-xs-2" style="text-align:left">
-            <p><strong>{{pizzas.nome}}</strong><br />{{pizzas.preco | currency:R$:2}}</p>
+            <p><strong>{{cartItem.nome}}</strong><br />{{cartItem.preco | currency:R$:2}}</p>
           </td>
 
             <td class="col-xs-3" style="text-align:center">
@@ -15,7 +15,7 @@
             <div class="input-group">
 
                 <span class="input-group-btn">
-                <button class="btn btn-xs glyphicon glyphicon-minus"></button> <span id="badge" class="badge">1</span><div class="btn-group"><button class="btn btn-xs glyphicon glyphicon-plus"></button>
+                <button class="btn btn-xs glyphicon glyphicon-minus"></button> <span id="badge" class="badge">{{cartItem.qty}}</span><div class="btn-group"><button class="btn btn-xs glyphicon glyphicon-plus"></button>
                 </span>
             </div>
 

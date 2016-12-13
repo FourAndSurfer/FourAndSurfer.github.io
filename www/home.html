@@ -42,7 +42,7 @@
                     <div class="text-center">
                         <h3 class="nome-pizza">{{bebidas.nome}}</h3>
                         <p>{{bebidas.descricao}}</p>
-                        <p><a href="#/" class="btn btn-primary btn" role="button">Quero Essa!</a></p>
+                        <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(bebidas);">Quero Essa!</a></p>
                     </div>
                 </figure>
             </div>
@@ -56,7 +56,7 @@
                     <div class="text-center">
                         <h3 class="nome-pizza">{{sobremesas.nome}}</h3>
                         <p>{{sobremesas.descricao}}</p>
-                        <p><a href="#/" class="btn btn-primary btn" role="button">Quero Essa!</a></p>
+                        <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(sobremesas);">Quero Essa!</a></p>
                     </div>
                 </figure>
             </div>
