@@ -1,4 +1,4 @@
-<section class="" ng-controller="CartController as cartCtrl">
+<section class="" ng-controller="CartController as cartCtrl" data-ng-init="cartCtrl.totalValueAndQty();">
   <div class="listaPizza container">
     <table class="table table-striped">
       <tbody>
@@ -7,37 +7,23 @@
           <td class="col-xs-2" style="text-align:left">
             <p><strong>{{cartItem.nome}}</strong><br />{{cartItem.preco | currency:R$:2}}</p>
           </td>
-
-            <td class="col-xs-3" style="text-align:center">
-
-
+          <td class="col-xs-3" style="text-align:center">
             <br/>
             <div class="input-group">
-
-                <span class="input-group-btn">
-                <button class="btn btn-xs glyphicon glyphicon-minus"></button> <span id="badge" class="badge">{{cartItem.qty}}</span><div class="btn-group"><button class="btn btn-xs glyphicon glyphicon-plus"></button>
+              <span class="input-group-btn">
+                <button class="btn btn-xs glyphicon glyphicon-minus" ng-click="cartCtrl.subtractQty(cartItem);cartCtrl.totalValueAndQty();"></button> <span id="badge" class="badge">{{cartItem.qty}}</span>
+              <div
+                class="btn-group"><button class="btn btn-xs glyphicon glyphicon-plus" ng-click="cartCtrl.sumQty(cartItem);cartCtrl.totalValueAndQty();"></button>
                 </span>
             </div>
-
-
-<!--            </div>-->
-
-
-
-
-
-
-
-
-
-            </td>
+          </td>
           <td class="col-xs-1"><br/><button class="glyphicon glyphicon-trash btn btn-danger btn-xs" alt="Remover do carrinho"></button></td>
         </tr>
         <tr>
-            <td class="col-xs-4 text-right"><strong>Valor Total</strong><br/><span id="valorTotal"></span></td>
-          <td class="col-xs-2">$40.00</td>
-            <td class="col-xs-2" style="text-align:center"><span class="badge">2</span></td>
-            <td class="col-xs-2"><button class="btn btn-primary btn-xs" alt="Finalizar Compra">Finalizar</button></td>
+          <td class="col-xs-4 text-right"><strong>Valor Total</strong><br/><span id="valorTotal"></span></td>
+          <td class="col-xs-2">{{cartCtrl.totalValue | currency:R$:2}}</td>
+          <td class="col-xs-2" style="text-align:center"><span class="badge">{{cartCtrl.totalQty}}</span></td>
+          <td class="col-xs-2"><button class="btn btn-primary btn-xs" alt="Finalizar Compra">Finalizar</button></td>
         </tr>
       </tbody>
     </table>
