@@ -3,20 +3,19 @@
     <table class="table table-striped">
       <tbody>
         <tr ng-repeat="pizzas in homeCtrl.pizzaList">
-          <td class="col-xs-2"><img width="100%" ng-src="{{pizzas.img}}" alt="{{pizzas.nome}}"></td>
+          <td class="col-xs-4"><img width="100%" ng-src="{{pizzas.img}}" alt="{{pizzas.nome}}"></td>
           <td class="col-xs-2" style="text-align:left">
-            <p><strong>{{pizzas.nome}}</strong><br /> Brotinho</p>
+            <p><strong>{{pizzas.nome}}</strong><br />{{pizzas.preco | currency:R$:2}}</p>
           </td>
-          <td class="col-xs-2"><br/>R$16.90</td>
+
           <td class="col-xs-2" style="text-align:center"><br/><span class="badge">1</span></td>
           <td class="col-xs-2"><br/><button class="glyphicon glyphicon-trash btn btn-danger btn-xs" alt="Remover do carrinho"></button></td>
         </tr>
         <tr>
-          <td class="col-xs-2"><img width="100%"></td>
-          <td class="col-xs-2" style="text-align:left">
-            <td class="col-xs-2">total<br/>R$ 33.80</td>
-            <td class="col-xs-2" style="text-align:center">total de itens<br/><span class="badge">1</span></td>
-            <td class="col-xs-2"><br/><button class="btn btn-primary btn-xs" alt="Finalizar Compra">Finalizar</button></td>
+            <td class="col-xs-4 text-right"><strong>Valor Total</strong><br/><span id="valorTotal"></span></td>
+          <td class="col-xs-2">$40.00</td>
+            <td class="col-xs-2" style="text-align:center"><span class="badge">2</span></td>
+            <td class="col-xs-2"><button class="btn btn-primary btn-xs" alt="Finalizar Compra">Finalizar</button></td>
         </tr>
       </tbody>
     </table>

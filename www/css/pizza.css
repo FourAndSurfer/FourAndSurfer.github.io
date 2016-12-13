@@ -3,13 +3,14 @@
     }
 
 .nome-pizza {
-    background-color: #C83D3D;
+
     width: 100%;
-    border-radius: 100px;
+/*    border-radius: 100px;*/
+    color: darkred;
 }
 
 .thumbnail p {
-    color: black;
+    color: white;
 }
 
 .thumbnail h3 {
@@ -81,4 +82,26 @@ table {
     width: 50%;
     height: auto;
     margin-bottom: 5%;
+}
+#imgPizzas{
+    padding: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+/*    border-radius: 50px 50px 0px 0px;*/
+    margin-top: 10px ;
+    margin-bottom: 10px;
+}
+#painel{
+    background-color: rgb(219, 219, 219);
+    border-radius: 50px 50px 00px 00px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 0px #000;
+}
+#pizzas{
+    background-color: beige;
+    border-radius: 10px;
+}
+#btnIngredientes{
+    margin-bottom: 10px;
+
 }
