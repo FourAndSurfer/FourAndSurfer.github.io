@@ -9,6 +9,7 @@ angular.module('PizzariaApp')
     };
     self.subtractQty = function(cartItem) {
         cartItem.qty--;
+        if (cartItem.qty == 0) { self.deleteItem(cartItem); }
     };
     self.totalValue = 0;
     self.totalQty = 0;
@@ -21,5 +22,16 @@ angular.module('PizzariaApp')
         }
         self.totalValue = value;
         self.totalQty = qty;
+    };
+
+    // função para deletar item do carrinho
+    self.deleteItem = function(cartItem) {
+        // procuro o item que eu enviei como parametro
+        // para poder descobrir o seu index e remover do array
+        for (var i = 0; i < self.cart.length; i++) {
+            if (self.cart[i].nome == cartItem.nome) {
+                self.cart.splice(i, 1);
+            }
+        }
     };
 }]);
