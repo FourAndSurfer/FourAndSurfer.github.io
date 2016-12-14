@@ -44,6 +44,7 @@
         background-size: cover;
         overflow-x: hidden;
         height: 100%;
+        margin-right: 0px;
     }
     
     body {
@@ -79,26 +80,14 @@
         height: auto;
         margin-bottom: 5%;
     }
-    
-    /*#imgPizzas {
-        padding: 60px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }*/
-    
+       
     #painel {
         background-color: rgb(219, 219, 219);
         border-radius: 50px 50px 00px 00px;
         box-sizing: border-box;
         box-shadow: 5px 5px 0px #000;
     }
-    /*#pizzas{
-    background-color: beige;
-    border-radius: 10px;
-}*/
-    
+
     .itensParaComprar {
         background-color: beige;
         border-radius: 10px;
