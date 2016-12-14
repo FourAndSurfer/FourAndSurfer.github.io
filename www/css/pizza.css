@@ -42,9 +42,8 @@
         background-color: #D30000;
         background-repeat: no-repeat;
         background-size: cover;
+        overflow-x: hidden;
         height: 100%;
-        overflow: hidden;
-        margin-right: 0px;
     }
     
     body {
