@@ -24,13 +24,12 @@
         <!--  Menu Pizzas  -->
         <div class="tab-pane fade" id="pizzas">
             <div class="row" ng-repeat="pizzas in homeCtrl.pizzaList | filter: filtro">
-                <div  class="col-xs-4 col-xs-offset-1" id="imgPizzas" style="background-image: url({{pizzas.img}})"></div>
+                <div class="col-xs-4 col-xs-offset-1" id="imgPizzas" style="background-image: url({{pizzas.img}})"></div>
                 <div align="center" class="text-center col-xs-6 ">
                     <h3 class="nome-pizza">{{pizzas.nome}}</h3>
-                    <button id="btnIngredientes" class="btn btn-default">Ingredientes</button>
+                    <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#pizzaModal" ng-click="homeCtrl.addPizzaToModal(pizzas);">Ingredientes</button>
                     <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(pizzas);">Quero Essa!</a></p>
                 </div>
-
             </div>
         </div>
         <!-- Menu Pizzas -->
@@ -63,5 +62,25 @@
         </div>
         <!-- Menu Sobremesas -->
     </div>
-    <!--</div>-->
+    <!-- Modal -->
+    <div id="pizzaModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Pizza de {{homeCtrl.pizza.nome}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div align="center"><img ng-src="{{homeCtrl.pizza.img}}" alt="{{homeCtrl.pizza.nome}}"></div>
+                    <p><b>Ingredientes:</b> {{homeCtrl.pizza.ingredientes}}</p>
+                    <p><b>Preço:</b> {{homeCtrl.pizza.preco | currency:R$:2}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.pizza);">Quero Essa!</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

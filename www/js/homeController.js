@@ -17,6 +17,13 @@ angular.module('PizzariaApp')
                                 img: cartItem.img
                         });
                 };
+                self.pizza = {};
+                self.addPizzaToModal = function(pizza) {
+                        self.pizza.nome = pizza.nome;
+                        self.pizza.ingredientes = pizza.ingredientes;
+                        self.pizza.img = pizza.img;
+                        self.pizza.preco = pizza.preco;
+                };
         }])
         .directive('showtab',
                 function () {
