@@ -1,112 +1,122 @@
     .thumbnail {
         background-image: linear-gradient(to top, #550000, #550000)
     }
-
-.nome-pizza {
-
-    width: 100%;
-/*    border-radius: 100px;*/
-    color: darkred;
-}
-
-.thumbnail p {
-    color: white;
-}
-
-.thumbnail h3 {
-    color: white;
-}
-
-#thumb img {
-    margin-top: auto;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-#thumb p {
-    font-size: 1.2em;
-}
-
-#thumb {
-    border-radius: 100px;
-}
-
-.painel-animado.ng-leave-active {
-    transform: scale(0.1);
-}
-
-.painel-animado {
-    transition: transform 0.5s;
-}
-
-
-html {
-
-    background-image: linear-gradient(to bottom, #670000, #D30000);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-
-}
-body {
-
-    background-image: linear-gradient(to bottom, #670000, #D30000);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-
-}
-
-
-.nav {
-    background-color: white;
-}
-
-#nav {
-    margin-bottom: 5px;
-    border-radius: 0px;
-}
-
-#filtro {
-    border-radius: 0px;
-}
-
-table {
-    background-color: white;
-}
-
-#divContato {
-    color: white;
-}
-#logo{
-    width: 50%;
-    height: auto;
-    margin-bottom: 5%;
-}
-#imgPizzas{
-    padding: 60px;
-    background-repeat: no-repeat;
-    background-size: cover;
-/*    border-radius: 50px 50px 0px 0px;*/
-    margin-top: 10px ;
-    margin-bottom: 10px;
-}
-#painel{
-    background-color: rgb(219, 219, 219);
-    border-radius: 50px 50px 00px 00px;
-    box-sizing: border-box;
-    box-shadow: 5px 5px 0px #000;
-}
-#pizzas{
+    
+    .nome-pizza {
+        width: 100%;
+        /*    border-radius: 100px;*/
+        color: darkred;
+    }
+    
+    .thumbnail p {
+        color: white;
+    }
+    
+    .thumbnail h3 {
+        color: white;
+    }
+    
+    #thumb img {
+        margin-top: auto;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    
+    #thumb p {
+        font-size: 1.2em;
+    }
+    
+    #thumb {
+        border-radius: 100px;
+    }
+    
+    .painel-animado.ng-leave-active {
+        transform: scale(0.1);
+    }
+    
+    .painel-animado {
+        transition: transform 0.5s;
+    }
+    
+    html {
+        background-color: #D30000;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+    
+    body {
+        background-image: linear-gradient(to bottom, #670000, #D30000);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+    
+    .nav {
+        background-color: white;
+    }
+    
+    #nav {
+        margin-bottom: 5px;
+        border-radius: 0px;
+    }
+    
+    #filtro {
+        border-radius: 0px;
+    }
+    
+    table {
+        background-color: white;
+    }
+    
+    #divContato {
+        color: white;
+    }
+    
+    #logo {
+        width: 50%;
+        height: auto;
+        margin-bottom: 5%;
+    }
+    
+    /*#imgPizzas {
+        padding: 60px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }*/
+    
+    #painel {
+        background-color: rgb(219, 219, 219);
+        border-radius: 50px 50px 00px 00px;
+        box-sizing: border-box;
+        box-shadow: 5px 5px 0px #000;
+    }
+    /*#pizzas{
     background-color: beige;
     border-radius: 10px;
-}
-#btnIngredientes{
-    margin-bottom: 10px;
-
-}
-#badge{
-    border-radius: 0px;
-    background-color: white;
-    color: black;
-}
+}*/
+    
+    .itensParaComprar {
+        background-color: beige;
+        border-radius: 10px;
+    }
+    
+    .imgItens {
+        padding: 60px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    #btnIngredientes {
+        margin-bottom: 10px;
+    }
+    
+    #badge {
+        border-radius: 0px;
+        background-color: white;
+        color: black;
+    }
