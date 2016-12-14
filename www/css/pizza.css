@@ -43,6 +43,8 @@
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
+        overflow: hidden;
+        margin-right: 0px;
     }
     
     body {
