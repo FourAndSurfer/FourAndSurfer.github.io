@@ -19,6 +19,7 @@ angular.module("PizzariaApp")
                 tx.executeSql('CREATE TABLE IF NOT EXISTS pizzas (id unique, nome, ingredientes, img, preco)');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 1, "Calabresa", "Mussarela, cebola, molho e orégano", "img/pizzas/calabresa.png", 20.00 WHERE NOT EXISTS (SELECT 1 FROM pizzas WHERE id = 1 AND nome = "Calabresa")');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 2, "Margherita", "Mussarela, molho, orégano, tomate e manjericão", "img/pizzas/margherita.png", 20.00 WHERE NOT EXISTS (SELECT 1 FROM pizzas WHERE id = 2 AND nome = "Margherita")');
+                tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 3, "Carne Seca", "Mussarela, molho, orégano, Carne-seca, cebola, requeijão e parmesão", "img/pizzas/carne-seca.png", 20.00 WHERE NOT EXISTS (SELECT 3 FROM pizzas WHERE id = 3 AND nome = "Carne Seca")');
                 tx.executeSql('SELECT nome, ingredientes, img, preco FROM pizzas', [], function (tx, results) {
                     var len = results.rows.length,
                         i;
