@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="io.github.FourAndSurfer.pizzaria" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Pizzaria</name>
-    <description>&#xD; projeto final do curso de ADS da infnet&#xD;
+    <description>projeto final do curso de ADS da infnet
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">&#xD; Four and Surfer Team&#xD;
+    <author email="support@phonegap.com" href="http://phonegap.com">Four and Surfer Team
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
