@@ -1,125 +1,130 @@
+<script src="js/materialize.min.js">
+</script>
 
-<script src="js/materialize.min.js"></script>
 <section class="" ng-controller="HomeController as homeCtrl" data-ng-init="homeCtrl.loadPizzasOnStart();">
-    <link rel="stylesheet" href="css/pizza.css">
-    <div class="row">
-        <div class="col-xs-12">
-            <form class="input-group">
-                <div class="input-group-addon input-sm"><span class="glyphicon glyphicon-search"></span></div>
-                <input id="filtro" type="text" ng-model='filtro' ng-model-options="{debounce: 500}" class='form-control' placeholder="Filtrar">
-                <div class="input-group-addon input-sm"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge">0</span></div>
-            </form>
+    <div  ng-controller="CartController as cartCtrl" data-ng-init="cartCtrl.totalValueAndQty();">
+
+
+        <link rel="stylesheet" href="css/pizza.css">
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="input-group">
+                    <div class="input-group-addon input-sm"><span class="glyphicon glyphicon-search"></span></div>
+                    <input id="filtro" type="text" ng-model='filtro' ng-model-options="{debounce: 500}" class='form-control' placeholder="Filtrar">
+                    <div class="input-group-addon input-sm"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge">{{cartCtrl.totalQty}}</span></div>
+                </form>
+            </div>
         </div>
-    </div>
-    <!-- nav tabs -->
-    <div>
-        <ul class="nav nav-tabs">
-            <!-- nav-justified -->
-            <li><a showtab="" href="#pizzas">Pizzas    </a></li>
-            <li><a showtab="" href="#bebidas">Bebidas   </a></li>
-            <li><a showtab="" href="#sobremesas">Sobremesas</a></li>
-        </ul>
-    </div>
-    <!-- nav tabs -->
-    <!--  Filtro  -->
-    <!--  Filtro  -->
-    <div class="tab-content container"><br/>
-        <!--  Menu Pizzas  -->
-        <div class="tab-pane fade itensParaComprar" id="pizzas">
-            <div class="row" ng-repeat="pizzas in homeCtrl.pizzaList | filter: filtro">
-                <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{pizzas.img}})"></div>
-                <div align="center" class="text-center col-xs-6 ">
-                    <h3 class="nome-pizza">{{pizzas.nome}}</h3>
-                    <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#pizzaModal" ng-click="homeCtrl.addPizzaToModal(pizzas);">Ingredientes</button>
-                    <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(pizzas);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a></p>
+        <!-- nav tabs -->
+        <div>
+            <ul class="nav nav-tabs">
+                <!-- nav-justified -->
+                <li><a showtab="" href="#pizzas">Pizzas   </a></li>
+                <li><a showtab="" href="#bebidas">Bebidas   </a></li>
+                <li><a showtab="" href="#sobremesas">Sobremesas</a></li>
+            </ul>
+        </div>
+        <!-- nav tabs -->
+        <!--  Filtro  -->
+        <!--  Filtro  -->
+        <div class="tab-content container"><br/>
+            <!--  Menu Pizzas  -->
+            <div class="tab-pane fade itensParaComprar" id="pizzas">
+                <div class="row" ng-repeat="pizzas in homeCtrl.pizzaList | filter: filtro">
+                    <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{pizzas.img}})"></div>
+                    <div align="center" class="text-center col-xs-6 ">
+                        <h3 class="nome-pizza">{{pizzas.nome}}</h3>
+                        <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#pizzaModal" ng-click="homeCtrl.addPizzaToModal(pizzas);">Ingredientes</button>
+                        <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(pizzas);cartCtrl.totalValueAndQty();" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu Pizzas -->
+            <!-- Menu Bebidas -->
+            <div class="tab-pane fade itensParaComprar" id="bebidas">
+                <div class="row" ng-repeat="bebidas in homeCtrl.bebidaList | filter: filtro">
+                    <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{bebidas.img}})"></div>
+                    <div align="center" class="text-center col-xs-6 ">
+                        <h3 class="nome-pizza">{{bebidas.nome}}</h3>
+                        <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#bebidaModal" ng-click="homeCtrl.addBebidaToModal(bebidas);">Descrição</button>
+                        <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(bebidas);cartCtrl.totalValueAndQty();" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu Bebidas -->
+            <!-- Menu Sobremesas  -->
+            <div class="tab-pane fade itensParaComprar" id="sobremesas">
+                <div class="row" ng-repeat="sobremesas in homeCtrl.sobremesaList | filter: filtro">
+                    <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{sobremesas.img}})"></div>
+                    <div align="center" class="text-center col-xs-6 ">
+                        <h3 class="nome-pizza">{{sobremesas.nome}}</h3>
+                        <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#sobremesaModal" ng-click="homeCtrl.addSobremesaToModal(sobremesas);">Descrição</button>
+                        <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(sobremesas);cartCtrl.totalValueAndQty();" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu Sobremesas -->
+        </div>
+        <!-- Modal -->
+        <div id="pizzaModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Pizza de {{homeCtrl.pizza.nome}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div align="center"><img ng-src="{{homeCtrl.pizza.img}}" alt="{{homeCtrl.pizza.nome}}"></div>
+                        <p><b>Ingredientes:</b> {{homeCtrl.pizza.ingredientes}}</p>
+                        <p><b>Preço:</b> {{homeCtrl.pizza.preco | currency:R$:2}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.pizza);cartCtrl.totalValueAndQty();" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Menu Pizzas -->
-        <!-- Menu Bebidas -->
-        <div class="tab-pane fade itensParaComprar" id="bebidas">
-            <div class="row" ng-repeat="bebidas in homeCtrl.bebidaList | filter: filtro">
-                <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{bebidas.img}})"></div>
-                <div align="center" class="text-center col-xs-6 ">
-                    <h3 class="nome-pizza">{{bebidas.nome}}</h3>
-                    <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#bebidaModal" ng-click="homeCtrl.addBebidaToModal(bebidas);">Descrição</button>
-                    <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(bebidas);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a></p>
+        <!-- Modal -->
+        <div id="bebidaModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Bebida {{homeCtrl.bebida.nome}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div align="center"><img ng-src="{{homeCtrl.bebida.img}}" alt="{{homeCtrl.bebida.nome}}"></div>
+                        <p><b>Descrição:</b> {{homeCtrl.bebida.descricao}}</p>
+                        <p><b>Preço:</b> {{homeCtrl.bebida.preco | currency:R$:2}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.bebida);cartCtrl.totalValueAndQty();" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Menu Bebidas -->
-        <!-- Menu Sobremesas  -->
-        <div class="tab-pane fade itensParaComprar" id="sobremesas">
-            <div class="row" ng-repeat="sobremesas in homeCtrl.sobremesaList | filter: filtro">
-                <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{sobremesas.img}})"></div>
-                <div align="center" class="text-center col-xs-6 ">
-                    <h3 class="nome-pizza">{{sobremesas.nome}}</h3>
-                    <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#sobremesaModal" ng-click="homeCtrl.addSobremesaToModal(sobremesas);">Descrição</button>
-                    <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(sobremesas);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a></p>
-                </div>
-            </div>
-        </div>
-        <!-- Menu Sobremesas -->
-    </div>
-    <!-- Modal -->
-    <div id="pizzaModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Pizza de {{homeCtrl.pizza.nome}}</h4>
-                </div>
-                <div class="modal-body">
-                    <div align="center"><img ng-src="{{homeCtrl.pizza.img}}" alt="{{homeCtrl.pizza.nome}}"></div>
-                    <p><b>Ingredientes:</b> {{homeCtrl.pizza.ingredientes}}</p>
-                    <p><b>Preço:</b> {{homeCtrl.pizza.preco | currency:R$:2}}</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.pizza);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal -->
-    <div id="bebidaModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Bebida {{homeCtrl.bebida.nome}}</h4>
-                </div>
-                <div class="modal-body">
-                    <div align="center"><img ng-src="{{homeCtrl.bebida.img}}" alt="{{homeCtrl.bebida.nome}}"></div>
-                    <p><b>Descrição:</b> {{homeCtrl.bebida.descricao}}</p>
-                    <p><b>Preço:</b> {{homeCtrl.bebida.preco | currency:R$:2}}</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.bebida);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal -->
-    <div id="sobremesaModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Sobremesa {{homeCtrl.sobremesa.nome}}</h4>
-                </div>
-                <div class="modal-body">
-                    <div align="center"><img ng-src="{{homeCtrl.sobremesa.img}}" alt="{{homeCtrl.sobremesa.nome}}"></div>
-                    <p><b>Descrição:</b> {{homeCtrl.sobremesa.descricao}}</p>
-                    <p><b>Preço:</b> {{homeCtrl.sobremesa.preco | currency:R$:2}}</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.sobremesa);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!-- Modal -->
+        <div id="sobremesaModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Sobremesa {{homeCtrl.sobremesa.nome}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div align="center"><img ng-src="{{homeCtrl.sobremesa.img}}" alt="{{homeCtrl.sobremesa.nome}}"></div>
+                        <p><b>Descrição:</b> {{homeCtrl.sobremesa.descricao}}</p>
+                        <p><b>Preço:</b> {{homeCtrl.sobremesa.preco | currency:R$:2}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.sobremesa);cartCtrl.totalValueAndQty();" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
