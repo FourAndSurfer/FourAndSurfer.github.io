@@ -83,52 +83,52 @@ angular.module('PizzariaApp').controller('login', function () {
 
     //    facebook
 
-    var init = function () {
-        FB.init({
-            appId: '100948877060066',
-            cookie: true,
-            status: true,
-            xfbml: true
-        });
-        FB.Event.subscribe('auth.authResponseChange', function (response) {
-
-            if (response.status == 'connected') {
-                FB.api('/me', {
-                    locale: 'en_US',
-                    fields: 'name, email'
-                }, function (response) {
-                    console.log(response);
-                    $('#loginesenha').html('<p>Olá <strong>' + response.name + '</strong> para conseguir-mos entregar sua pizza, complete seu cadastro!</p>');
-                    $('#btnEntrar').hide();
-                    $('#btnCadastrar').removeClass('btn-default');
-                    $('#btnCadastrar').addClass('btn-primary');
-                    $('#nome').val(response.name);
-                    $('#email').val(response.email);
-
-                    //                    document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true"></fb:login-button>'
-
-                });
-
-
-            } else if (response.status == 'not_authorized') {
-                FB.login();
-
-            } else {
-                $('#loginesenha').html('<div class="form-group">                        <label id="usuario" for="Email">Usuário</label>                        <input id="email" type="email" class="form-control" id="Email" placeholder="Email cadastrado">                    </div>                    <div class="form-group">                        <label for="exampleInputPassword1">Senha</label>                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">                    </div>');
-
-                //                $('#usuario').text('Usuário');
-                //                $('#email').val('');
-            }
-            $('#btnEntrar').show();
-            $('#btnCadastrar').addClass('btn-default');
-            $('#btnCadastrar').removeClass('btn-primary');
-        });
-        document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true">Login pelo Facebook</fb:login-button>'
-    }
-
-    init();
-
-
-
-
-});
+//    var init = function () {
+        //        FB.init({
+        //            appId: '100948877060066',
+        //            cookie: true,
+        //            status: true,
+        //            xfbml: true
+        //        });
+        //        FB.Event.subscribe('auth.authResponseChange', function (response) {
+        //
+        //            if (response.status == 'connected') {
+        //                FB.api('/me', {
+        //                    locale: 'en_US',
+        //                    fields: 'name, email'
+        //                }, function (response) {
+        //                    console.log(response);
+        //                    $('#loginesenha').html('<p>Olá <strong>' + response.name + '</strong> para conseguir-mos entregar sua pizza, complete seu cadastro!</p>');
+        //                    $('#btnEntrar').hide();
+        //                    $('#btnCadastrar').removeClass('btn-default');
+        //                    $('#btnCadastrar').addClass('btn-primary');
+        //                    $('#nome').val(response.name);
+        //                    $('#email').val(response.email);
+        //
+        //                    //                    document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true"></fb:login-button>'
+        //
+        //                });
+        //
+        //
+        //            } else if (response.status == 'not_authorized') {
+        //                FB.login();
+        //
+        //            } else {
+        //                $('#loginesenha').html('<div class="form-group">                        <label id="usuario" for="Email">Usuário</label>                        <input id="email" type="email" class="form-control" id="Email" placeholder="Email cadastrado">                    </div>                    <div class="form-group">                        <label for="exampleInputPassword1">Senha</label>                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">                    </div>');
+        //
+        //                //                $('#usuario').text('Usuário');
+        //                //                $('#email').val('');
+        //            }
+        //            $('#btnEntrar').show();
+        //            $('#btnCadastrar').addClass('btn-default');
+        //            $('#btnCadastrar').removeClass('btn-primary');
+        //        });
+        //        document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true">Login pelo Facebook</fb:login-button>'
+        //    }
+        //
+        //    init();
+        //
+        //
+        //
+        //
+        //});
