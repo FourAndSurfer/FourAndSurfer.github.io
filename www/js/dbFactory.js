@@ -6,6 +6,7 @@ angular.module("PizzariaApp")
             response.pizzas = [];
             response.bebidas = [];
             response.sobremesas = [];
+            response.usuarios = [];
             var db = window.openDatabase(
                 'pizzaria', // short name
                 '1.0', // version
@@ -15,7 +16,7 @@ angular.module("PizzariaApp")
             db.transaction(function (tx) {
                 // Insere pizzas na tabela
                 // Só descomenta se precisar apagar a tabela!
-//                 tx.executeSql('DROP TABLE IF EXISTS pizzas');
+                //                 tx.executeSql('DROP TABLE IF EXISTS pizzas');
                 tx.executeSql('CREATE TABLE IF NOT EXISTS pizzas (id unique, nome, ingredientes, img, preco)');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 1, "Calabresa", "Mussarela, cebola, molho e orégano", "img/pizzas/calabresa.png", 20.00 WHERE NOT EXISTS (SELECT 1 FROM pizzas WHERE id = 1 AND nome = "Calabresa")');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 2, "Margherita", "Mussarela, molho, orégano, tomate e manjericão", "img/pizzas/margherita.png", 20.00 WHERE NOT EXISTS (SELECT 1 FROM pizzas WHERE id = 2 AND nome = "Margherita")');
@@ -66,6 +67,20 @@ angular.module("PizzariaApp")
                         response.sobremesas.push(results.rows.item(i));
                     }
                 });
+
+                // Insere usuários na tabela
+                // Só descomenta se precisar apagar a tabela!
+                // tx.executeSql('DROP TABLE IF EXISTS usuarios');
+                tx.executeSql('CREATE TABLE IF NOT EXISTS usuarios (id unique, nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info)');
+                tx.executeSql('INSERT INTO usuarios (id unique, nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info) SELECT 1, "admin", "admin@admin.pizzaria.com.br", "2524-4225", "98753-6007", "Av. Rio Branco", "156 sl.3018", "centro", "20040-901", "P@ssw0rd", true WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE id = 1 AND nome = "admin")');
+                tx.executeSql('SELECT nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info FROM usuarios', [], function (tx, results) {
+                    var len = results.rows.length,
+                        i;
+                    for (i = 0; i < len; i++) {
+                        response.usuarios.push(results.rows.item(i));
+                    }
+                });
+
             });
         };
         return response;

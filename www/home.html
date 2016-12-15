@@ -1,8 +1,10 @@
 <script src="js/materialize.min.js">
+
+
 </script>
 
 <section class="" ng-controller="HomeController as homeCtrl" data-ng-init="homeCtrl.loadPizzasOnStart();">
-    <div  ng-controller="CartController as cartCtrl" data-ng-init="cartCtrl.totalValueAndQty();">
+    <div ng-controller="CartController as cartCtrl" data-ng-init="cartCtrl.totalValueAndQty();">
 
 
         <link rel="stylesheet" href="css/pizza.css">
@@ -11,7 +13,8 @@
                 <form class="input-group">
                     <div class="input-group-addon input-sm"><span class="glyphicon glyphicon-search"></span></div>
                     <input id="filtro" type="text" ng-model='filtro' ng-model-options="{debounce: 500}" class='form-control' placeholder="Filtrar">
-                    <div class="input-group-addon input-sm"><a href="#/carrinho" class="glyphicon glyphicon-shopping-cart"></a><span class="badge">{{cartCtrl.totalQty}}</span></div>
+                    <div class="input-group-addon input-sm">
+                        <a href="#/carrinho" class="glyphicon glyphicon-shopping-cart"></a><span class="badge">{{cartCtrl.totalQty}}</span></div>
                 </form>
             </div>
         </div>
@@ -31,7 +34,7 @@
             <!--  Menu Pizzas  -->
             <div class="tab-pane fade itensParaComprar" id="pizzas">
                 <div class="row" ng-repeat="pizzas in homeCtrl.pizzaList | filter: filtro">
-                    <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{pizzas.img}})"></div>
+                    <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{pizzas.img}}); background-position: center;"></div>
                     <div align="center" class="text-center col-xs-6 ">
                         <h3 class="nome-pizza">{{pizzas.nome}}</h3>
                         <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#pizzaModal" ng-click="homeCtrl.addPizzaToModal(pizzas);">Ingredientes</button>
@@ -43,7 +46,7 @@
             <!-- Menu Bebidas -->
             <div class="tab-pane fade itensParaComprar" id="bebidas">
                 <div class="row" ng-repeat="bebidas in homeCtrl.bebidaList | filter: filtro">
-                    <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{bebidas.img}})"></div>
+                    <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{bebidas.img}});background-position: center;"></div>
                     <div align="center" class="text-center col-xs-6 ">
                         <h3 class="nome-pizza">{{bebidas.nome}}</h3>
                         <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#bebidaModal" ng-click="homeCtrl.addBebidaToModal(bebidas);">Descrição</button>
@@ -55,7 +58,7 @@
             <!-- Menu Sobremesas  -->
             <div class="tab-pane fade itensParaComprar" id="sobremesas">
                 <div class="row" ng-repeat="sobremesas in homeCtrl.sobremesaList | filter: filtro">
-                    <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{sobremesas.img}})"></div>
+                    <div class="col-xs-4 col-xs-offset-1 imgItens" style="background-image: url({{sobremesas.img}});background-position: center;"></div>
                     <div align="center" class="text-center col-xs-6 ">
                         <h3 class="nome-pizza">{{sobremesas.nome}}</h3>
                         <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#sobremesaModal" ng-click="homeCtrl.addSobremesaToModal(sobremesas);">Descrição</button>
