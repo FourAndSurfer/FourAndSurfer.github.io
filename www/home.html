@@ -1,3 +1,5 @@
+
+<script src="js/materialize.min.js"></script>
 <section class="" ng-controller="HomeController as homeCtrl" data-ng-init="homeCtrl.loadPizzasOnStart();">
     <link rel="stylesheet" href="css/pizza.css">
     <div class="row">
@@ -29,7 +31,7 @@
                 <div align="center" class="text-center col-xs-6 ">
                     <h3 class="nome-pizza">{{pizzas.nome}}</h3>
                     <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#pizzaModal" ng-click="homeCtrl.addPizzaToModal(pizzas);">Ingredientes</button>
-                    <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(pizzas);">Quero Essa!</a></p>
+                    <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(pizzas);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a></p>
                 </div>
             </div>
         </div>
@@ -41,7 +43,7 @@
                 <div align="center" class="text-center col-xs-6 ">
                     <h3 class="nome-pizza">{{bebidas.nome}}</h3>
                     <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#bebidaModal" ng-click="homeCtrl.addBebidaToModal(bebidas);">Descrição</button>
-                    <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(bebidas);">Quero Essa!</a></p>
+                    <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(bebidas);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a></p>
                 </div>
             </div>
         </div>
@@ -53,7 +55,7 @@
                 <div align="center" class="text-center col-xs-6 ">
                     <h3 class="nome-pizza">{{sobremesas.nome}}</h3>
                     <button id="btnIngredientes" class="btn btn-default" data-toggle="modal" data-target="#sobremesaModal" ng-click="homeCtrl.addSobremesaToModal(sobremesas);">Descrição</button>
-                    <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(sobremesas);">Quero Essa!</a></p>
+                    <p><a href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart(sobremesas);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a></p>
                 </div>
             </div>
         </div>
@@ -74,7 +76,7 @@
                     <p><b>Preço:</b> {{homeCtrl.pizza.preco | currency:R$:2}}</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.pizza);">Quero Essa!</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.pizza);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -95,7 +97,7 @@
                     <p><b>Preço:</b> {{homeCtrl.bebida.preco | currency:R$:2}}</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.bebida);">Quero Essa!</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.bebida);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -116,7 +118,7 @@
                     <p><b>Preço:</b> {{homeCtrl.sobremesa.preco | currency:R$:2}}</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.sobremesa);">Quero Essa!</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="homeCtrl.sendToCart(homeCtrl.sobremesa);" onclick="Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
