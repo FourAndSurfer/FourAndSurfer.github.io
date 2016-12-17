@@ -16,14 +16,14 @@ angular.module("PizzariaApp")
             db.transaction(function (tx) {
                 // Insere pizzas na tabela
                 // Só descomenta se precisar apagar a tabela!
-                //                 tx.executeSql('DROP TABLE IF EXISTS pizzas');
+//                                 tx.executeSql('DROP TABLE IF EXISTS pizzas');
                 tx.executeSql('CREATE TABLE IF NOT EXISTS pizzas (id unique, nome, ingredientes, img, preco)');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 1, "Calabresa", "Mussarela, cebola, molho e orégano", "img/pizzas/calabresa.png", 20.00 WHERE NOT EXISTS (SELECT 1 FROM pizzas WHERE id = 1 AND nome = "Calabresa")');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 2, "Margherita", "Mussarela, molho, orégano, tomate e manjericão", "img/pizzas/margherita.png", 20.00 WHERE NOT EXISTS (SELECT 1 FROM pizzas WHERE id = 2 AND nome = "Margherita")');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 3, "Carne Seca", "Mussarela, molho, orégano, Carne-seca, cebola, requeijão e parmesão", "img/pizzas/carne-seca.png", 20.00 WHERE NOT EXISTS (SELECT 3 FROM pizzas WHERE id = 3 AND nome = "Carne Seca")');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 4, "4 Queijos", "Mussarela, molho, orégano, requeijão, parmesão e gorgonzola", "img/pizzas/4queijos.png", 20.00 WHERE NOT EXISTS (SELECT 4 FROM pizzas WHERE id = 4 AND nome = "4 Queijos")');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 5, "Branca de Neve", "Mussarela, Mussarela de bufala, Requeijão, Parmesão, Manjericão, Molho e Orégano", "img/pizzas/bufala.png", 20.00 WHERE NOT EXISTS (SELECT 5 FROM pizzas WHERE id = 5 AND nome = "Branca de Neve")');
-                tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 6, "Frango com Catupiry", "Frango, Cebola, Requeijão, Molho, Orégano e Requeijão.", "img/pizzas/frango.png", 20.00 WHERE NOT EXISTS (SELECT 6 FROM pizzas WHERE id = 6 AND nome = "Frango com Catupiry")');
+                tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 6, "Frango", "Frango, Cebola, Requeijão, Molho, Orégano e Requeijão.", "img/pizzas/frango.png", 20.00 WHERE NOT EXISTS (SELECT 6 FROM pizzas WHERE id = 6 AND nome = "Frango")');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 7, "Mussarela", "Molho, Mussarela e Orégano.", "img/pizzas/mussarela.png", 20.00 WHERE NOT EXISTS (SELECT 7 FROM pizzas WHERE id = 7 AND nome = "Mussarela")');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 8, "Pepperoni", "Molho, Mussarela, Orégano e Pepperoni.", "img/pizzas/pepperoni.png", 20.00 WHERE NOT EXISTS (SELECT 8 FROM pizzas WHERE id = 8 AND nome = "Pepperoni")');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 9, "Portuguesa", "Mussarela, Cebola, Pimentão, Presunto, Azeitona preta, Molho, Orégano e Ovo de codorna fatiado.", "img/pizzas/portuguesa.png", 20.00 WHERE NOT EXISTS (SELECT 9 FROM pizzas WHERE id = 9 AND nome = "Portuguesa")');
