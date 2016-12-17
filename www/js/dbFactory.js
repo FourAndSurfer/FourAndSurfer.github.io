@@ -77,8 +77,8 @@ angular.module("PizzariaApp")
                     var len = results.rows.length,
                         i;
                     for (i = 0; i < len; i++) {
-                        cosole.log('at  users');
-                        cosole.log(results.rows.item(i));
+                        console.log('at  users');
+                        console.log(results.rows.item(i));
                         response.usuarios.push(results.rows.item(i));
                     }
                 });
@@ -86,6 +86,7 @@ angular.module("PizzariaApp")
             }, function (err) {
                 console.log(err);
             });
+
         };
         return response;
     }]);

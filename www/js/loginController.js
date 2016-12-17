@@ -128,51 +128,63 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
         document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true">Login pelo Facebook</fb:login-button>'
     }
 
-//    fazendo login
+    //    fazendo login
 
     $('#btnEntrar').click(function () {
         var self = this;
         var usuarioEmail = $('#email').val();
         var usuarioSenha = $('#password1').val();
 
-        console.log(DbFactory);
+        console.log(DbFactory.usuarios);
 
-        if ((usuarioEmail == "") && (usuarioSenha == 'senha')) {
+        for (i=0; i<DbFactory.usuarios.length; i++)
+        if ((usuarioEmail == DbFactory.usuarios[i].email) && (usuarioSenha == DbFactory.usuarios[i].senha)) {
 
             $('#loginesenha').html('<p>Olá <strong>' + 'Admin' + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
-            console.log('entrou');
+
+            $('#botoesLogin').html('<div align="center"><button align="center" id="btnLogout" class="btn btn-danger">Logout</button></div>');
 
 
-        } else {
-
-            $('#divError').show();
+                break;
         }
 
-//        fim login
+            $('#divError').show();
+        });
 
-//        inserindo novo usuário na tabela
+        //        fim login
 
+        //        inserindo novo usuário na tabela
+
+
+
+    $('#btncadastrarmodal').click(function () {
+        var usuario = {
+            nome,
+            email,
+            tel,
+            cel,
+            endereco,
+            complemento,
+            bairro,
+            cep,
+            Password,
+            info
+        };
+        usuario.nome = $('#nome').val();
+        usuario.email = $('#email').val();
+        usuario.tel = $('#tel').val();
+        usuario.cel = $('#cel').val();
+        usuario.endereco = $('#endereco').val();
+        usuario.complemento = $('#complemento').val();
+        usuario.bairro = $('#bairro').val();
+        usuario.cep = $('#cep').val();
+        usuario.Password = $('#Password').val();
+        usuario.info = $('#info').val();
+
+        console.log(usuario);
+        //tx.executeSql('INSERT INTO usuarios (id, nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info) SELECT ' + DbFactory.usuarios.length + ', "' + usuario.nome + '", "' + usuario.email + '",  "' + usuario.tel + '", "' + usuario.cel + '", "' + usuario.endereco + '", "' + usuario.complemento + '", "' + usuario.bairro + '", "' + usuario.cep + '", "' + usuario.Password + '", "' + usuario.info + '" WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE id = ' + DbFactory.usuarios.length + ' AND nome = "' + usuario.nome + '")');
 
     });
-$('#btncadastrarmodal').click(function () {
-    var usuario = {
-        nome, email, tel, cel, endereco, complemento, bairro, cep, Password, info
-    };
-    usuario.nome = $('#nome').val();
-    usuario.email = $('#email').val();
-    usuario.tel = $('#tel').val();
-    usuario.cel = $('#cel').val();
-    usuario.endereco = $('#endereco').val();
-    usuario.complemento = $('#complemento').val();
-    usuario.bairro = $('#bairro').val();
-    usuario.cep = $('#cep').val();
-    usuario.Password = $('#Password').val();
-    usuario.info = $('#info').val();
-
-    console.log(usuario);
-
-
-});
 
     init();
             }]);
