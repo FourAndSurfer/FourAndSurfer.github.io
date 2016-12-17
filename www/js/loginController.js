@@ -85,6 +85,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
     //    facebook
 
     var init = function () {
+        console.log(DbFactory.usuarios);
         FB.init({
             appId: '100948877060066',
             cookie: true,
