@@ -153,7 +153,25 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
 
 
     });
+$('#btncadastrarmodal').click(function () {
+    var usuario = {
+        nome, email, tel, cel, endereco, complemento, bairro, cep, Password, info
+    };
+    usuario.nome = $('#nome').val();
+    usuario.email = $('#email').val();
+    usuario.tel = $('#tel').val();
+    usuario.cel = $('#cel').val();
+    usuario.endereco = $('#endereco').val();
+    usuario.complemento = $('#complemento').val();
+    usuario.bairro = $('#bairro').val();
+    usuario.cep = $('#cep').val();
+    usuario.Password = $('#Password').val();
+    usuario.info = $('#info').val();
 
+    console.log(usuario);
+
+
+});
 
     init();
             }]);
