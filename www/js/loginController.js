@@ -3,6 +3,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
     var latidude = 0;
     var longitude = 0;
     $("#divError").hide();
+    $('#botaoLogout').hide();
 
     $('#localiza').click(function (event) {
         console.log('OIE');
@@ -85,7 +86,6 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
     //    facebook
 
     var init = function () {
-        console.log(DbFactory.usuarios);
         FB.init({
             appId: '100948877060066',
             cookie: true,
@@ -135,25 +135,36 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
         var usuarioEmail = $('#email').val();
         var usuarioSenha = $('#password1').val();
 
-        console.log(DbFactory.usuarios);
+        console.log('btn entrar:', DbFactory.usuarios);
 
-        for (i=0; i<DbFactory.usuarios.length; i++)
-        if ((usuarioEmail == DbFactory.usuarios[i].email) && (usuarioSenha == DbFactory.usuarios[i].senha)) {
+        for (i = 0; i < DbFactory.usuarios.length; i++)
+            if ((usuarioEmail == DbFactory.usuarios[i].email) && (usuarioSenha == DbFactory.usuarios[i].senha)) {
 
-            $('#loginesenha').html('<p>Olá <strong>' + 'Admin' + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
+                $('#loginesenha').html('<p>Olá <strong>' + DbFactory.usuarios[i].nome + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
 
-            $('#botoesLogin').html('<div align="center"><button align="center" id="btnLogout" class="btn btn-danger">Logout</button></div>');
+                $('#botoesLogin').hide();
+                $('#botaoLogout').show();
 
 
                 break;
-        }
+            }
 
-            $('#divError').show();
-        });
+        $('#divError').show();
+    });
 
-        //        fim login
+    //        fim login
+    //    inicio logout
 
-        //        inserindo novo usuário na tabela
+    $('#btnLogout').click(function () {
+        $('#loginesenha').html('<div class="form-group">                        <label id="usuario" for="Email">Usuário</label>                        <input id="email" type="email" class="form-control" id="Email" placeholder="Email cadastrado">                    </div>                    <div class="form-group">                        <label for="password1">Senha</label>                        <input type="password" class="form-control" id="password1" placeholder="Senha">                    </div>                    <div id="divError" class="form-control alert-danger">Email e/ou senha invalidos!</div>                    <br/>');
+
+        $('#botoesLogin').show();
+        $('#botaoLogout').hide();
+        $("#divError").hide();
+
+    });
+    //fim logout
+    //        inserindo novo usuário na tabela
 
 
 
