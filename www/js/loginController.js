@@ -1,4 +1,4 @@
-angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFactory) {
+angular.module('PizzariaApp').controller('login', '$scope' ['DbFactory', function (DbFactory, $scope) {
     //--chama o plugin de geolocalização e retorna o local do dispositivo--//
     var latidude = 0;
     var longitude = 0;
@@ -127,37 +127,35 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
         document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true">Login pelo Facebook</fb:login-button>'
     }
 
+//    fazendo login
 
-    $('#btnEntrar').click(function (DbFactory) {
-
+    $('#btnEntrar').click(function () {
+        var self = this;
         var usuarioEmail = $('#email').val();
         var usuarioSenha = $('#password1').val();
-        //        var usuarioList = usuarioList.usuarios;
 
-        if ((usuarioEmail == 'admin') && (usuarioSenha == 'senha')) {
-                $('#loginesenha').html('<p>Olá <strong>' + 'Admin' + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
-                console.log('entrou');
+        console.log(DbFactory);
+
+        if ((usuarioEmail == "") && (usuarioSenha == 'senha')) {
+
+            $('#loginesenha').html('<p>Olá <strong>' + 'Admin' + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
+            console.log('entrou');
+
 
         } else {
 
             $('#divError').show();
         }
 
+//        fim login
+
+//        inserindo novo usuário na tabela
 
 
+        $('#btncadastrar').click(function ($scope) {
+            $scope.usuario = {}
 
 
-
-        //        for (i=0; i<usuarioList.length; i++){
-        //            if (usuarioEmail === usuarioList.email && usuarioSenha ===  usuarioList.senha){
-        //
-        //                $('#loginesenha').html('<p>Olá <strong>' + usuarioList.name + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!');
-        //
-        //                    break;
-        //            }
-        //
-        //        }
-        ////        $('#alertaErro').show();
     });
 
     init();

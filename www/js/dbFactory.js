@@ -70,9 +70,9 @@ angular.module("PizzariaApp")
 
                 // Insere usuários na tabela
                 // Só descomenta se precisar apagar a tabela!
-                // tx.executeSql('DROP TABLE IF EXISTS usuarios');
+                 //tx.executeSql('DROP TABLE IF EXISTS usuarios');
                 tx.executeSql('CREATE TABLE IF NOT EXISTS usuarios (id unique, nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info)');
-                tx.executeSql('INSERT INTO usuarios (id unique, nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info) SELECT 1, "admin", "admin@admin.pizzaria.com.br", "2524-4225", "98753-6007", "Av. Rio Branco", "156 sl.3018", "centro", "20040-901", "P@ssw0rd", true WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE id = 1 AND nome = "admin")');
+                tx.executeSql('INSERT INTO usuarios (id, nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info) SELECT 1, "admin", "admin@admin.pizzaria.com.br", "2524-4225", "98753-6007", "Av. Rio Branco", "156 sl.3018", "centro", "20040-901", "P@ssw0rd", true WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE id = 1 AND nome = "admin")');
                 tx.executeSql('SELECT nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info FROM usuarios', [], function (tx, results) {
                     var len = results.rows.length,
                         i;

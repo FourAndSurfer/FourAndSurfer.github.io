@@ -12,7 +12,6 @@ angular.module('PizzariaApp', [
             templateUrl: 'login.html',
             reloadOnSearch: false,
             controller: "login"
-                //        controller: "CadastroController"
         });
         $routeProvider.when('/carrinho', {
             templateUrl: 'carrinho.html',
