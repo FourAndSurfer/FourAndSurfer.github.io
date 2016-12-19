@@ -168,7 +168,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
 
 
 
-    $('#btncadastrarmodal').click(function () {
+    function cadastrar() {
         var usuario = {
             nome,
             email,
@@ -181,7 +181,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
             Password,
             info
         };
-        usuario.nome = $('#nome').val();
+        usuario.nome = $scope.cliente.nome;
         usuario.email = $('#email').val();
         usuario.tel = $('#tel').val();
         usuario.cel = $('#cel').val();
@@ -195,7 +195,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
         console.log(usuario);
         //tx.executeSql('INSERT INTO usuarios (id, nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info) SELECT ' + DbFactory.usuarios.length + ', "' + usuario.nome + '", "' + usuario.email + '",  "' + usuario.tel + '", "' + usuario.cel + '", "' + usuario.endereco + '", "' + usuario.complemento + '", "' + usuario.bairro + '", "' + usuario.cep + '", "' + usuario.Password + '", "' + usuario.info + '" WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE id = ' + DbFactory.usuarios.length + ' AND nome = "' + usuario.nome + '")');
 
-    });
+    };
 
     init();
             }]);
