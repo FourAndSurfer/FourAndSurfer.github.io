@@ -16,7 +16,7 @@
                                 </span>
                             </div>
                     </td>
-                    <td class="col-xs-1"><br/><button class="glyphicon glyphicon-trash btn btn-danger btn-xs" ng-click="cartCtrl.deleteItem(cartItem);cartCtrl.totalValueAndQty();" alt="Remover do carrinho"></button></td>
+                    <td class="col-xs-1"><br/><button class="glyphicon glyphicon-trash btn btn-danger btn-xs" ng-click="cartCtrl.deleteItem(cartItem); cartCtrl.totalValueAndQty();" alt="Remover do carrinho"></button></td>
                 </tr>
                 <tr>
                     <td class="col-xs-4 text-right"><strong>Valor Total {{cartCtrl.totalQty}}</strong><br/><span id="valorTotal"></span></td>
@@ -43,7 +43,7 @@
                                     {{cartItem.nome}}
                                 </td>
                                 <td>
-                                    {{cartCtrl.totalValue | currency:R$:2}}
+                                    {{cartItem.preco | currency:R$:2}}
                                 </td>
                                 <td>
                                     <span class="badge">{{cartItem.qty}}</span>
