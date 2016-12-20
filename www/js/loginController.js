@@ -162,6 +162,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
 
         $('#botoesLogin').show();
         $('#botaoLogout').hide();
+
         $("#divError").hide();
 
     });
@@ -174,7 +175,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
 
         var usuario = {
             nome: $('#nome').val(),
-            email: $('#email').val(),
+            email: $('#email1').val(),
             tel: $('#tel').val(),
             cel: $('#cel').val(),
             endereco: $('#endereco').val(),
@@ -187,6 +188,12 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
 
         console.log(usuario);
         createuser(usuario);
+        $('#modalCadastro').modal('hide')
+        $('#loginesenha').html('<p>Olá <strong>' + usuario.nome + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
+
+        $('#botoesLogin').hide();
+
+        $('#botaoLogout').show();
     });
 
     init();
