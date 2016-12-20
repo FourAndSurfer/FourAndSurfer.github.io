@@ -178,8 +178,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
             complemento,
             bairro,
             cep,
-            Password,
-            info
+            Password
         };
         usuario.nome = $scope.cliente.nome;
         usuario.email = $('#email').val();
@@ -190,7 +189,6 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
         usuario.bairro = $('#bairro').val();
         usuario.cep = $('#cep').val();
         usuario.Password = $('#Password').val();
-        usuario.info = $('#info').val();
 
         console.log(usuario);
         //tx.executeSql('INSERT INTO usuarios (id, nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info) SELECT ' + DbFactory.usuarios.length + ', "' + usuario.nome + '", "' + usuario.email + '",  "' + usuario.tel + '", "' + usuario.cel + '", "' + usuario.endereco + '", "' + usuario.complemento + '", "' + usuario.bairro + '", "' + usuario.cep + '", "' + usuario.Password + '", "' + usuario.info + '" WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE id = ' + DbFactory.usuarios.length + ' AND nome = "' + usuario.nome + '")');
