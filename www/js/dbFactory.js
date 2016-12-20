@@ -84,20 +84,20 @@ angular.module("PizzariaApp")
                     }
                 });
 
-            }, function(err){
+            }, function (err) {
                 console.log(err);
             });
 
         };
 
-        response.createuser = function (user) {
+        window.createuser = function (user) {
+            alert('entrou');
             response.db.transaction(function (tx) {
-                tx.executeSql('INSERT INTO usuarios (nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged, fbId) SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ? WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE email = ?)',
-                [user.nome, user.email, user.tel, user.cel, user.endereco, user.complemento, user.bairro, user.cep, user.password, user.fbId, user.email],
-                function(tx, results){
+                tx.executeSql('INSERT INTO usuarios (nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged, fbId) SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ? WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE email = ?)', [user.nome, user.email, user.tel, user.cel, user.endereco, user.complemento, user.bairro, user.cep, user.password, user.fbId, user.email],
+                    function (tx, results) {
 
-                });
-            }, function(err){
+                    });
+            }, function (err) {
                 console.log(err);
             });
         };

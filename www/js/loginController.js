@@ -169,25 +169,25 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
     //        inserindo novo usuário na tabela
 
 
-    $('#btncadastrarmodal').click(
-        function () {
-            var usuario = {
-                nome: $('#nome').val(),
-                email: $('#email').val(),
-                tel: $('#tel').val(),
-                cel: $('#cel').val(),
-                endereco: $('#endereco').val(),
-                complemento: $('#complemento').val(),
-                bairro: $('#bairro').val(),
-                cep: $('#cep').val(),
-                password: $('#password').val(),
-                fbId: fbId
-            };
+    $('#btncadastrarmodal').click(function () {
 
-            console.log(usuario);
-            DbFactory.createUser(usuario);
-        }
-    );
+
+        var usuario = {
+            nome: $('#nome').val(),
+            email: $('#email').val(),
+            tel: $('#tel').val(),
+            cel: $('#cel').val(),
+            endereco: $('#endereco').val(),
+            complemento: $('#complemento').val(),
+            bairro: $('#bairro').val(),
+            cep: $('#cep').val(),
+            password: $('#password').val(),
+            fbId: fbId
+        };
+
+        console.log(usuario);
+        createuser(usuario);
+    });
 
     init();
 }]);
