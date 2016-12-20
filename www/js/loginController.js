@@ -2,6 +2,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
     //--chama o plugin de geolocalização e retorna o local do dispositivo--//
     var latidude = 0;
     var longitude = 0;
+    var fbId = null;
     $("#divError").hide();
     $('#botaoLogout').hide();
 
@@ -99,6 +100,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
                     locale: 'en_US',
                     fields: 'name, email'
                 }, function (response) {
+                    fbId = response.id;
                     console.log(response);
                     $('#loginesenha').html('<p>Olá <strong>' + response.name + '</strong> para conseguir-mos entregar sua pizza, complete seu cadastro!</p>');
                     $('#btnEntrar').hide();
@@ -167,23 +169,25 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
     //        inserindo novo usuário na tabela
 
 
+    $('#btncadastrarmodal').click(
+        function () {
+            var usuario = {
+                nome: $('#nome').val(),
+                email: $('#email').val(),
+                tel: $('#tel').val(),
+                cel: $('#cel').val(),
+                endereco: $('#endereco').val(),
+                complemento: $('#complemento').val(),
+                bairro: $('#bairro').val(),
+                cep: $('#cep').val(),
+                password: $('#password').val(),
+                fbId: fbId
+            };
 
-    function cadastrar() {
-        var usuario = {
-            nome: $scope.cliente.nome,
-            email: $('#email').val(),
-            tel: $('#tel').val(),
-            cel: $('#cel').val(),
-            endereco: $('#endereco').val(),
-            complemento: $('#complemento').val(),
-            bairro: $('#bairro').val(),
-            cep: $('#cep').val(),
-            Password: $('#Password').val()
-        };
-
-        console.log(usuario);
-        DbFactory.createUser(usuario);
-    };
+            console.log(usuario);
+            DbFactory.createUser(usuario);
+        }
+    );
 
     init();
 }]);
