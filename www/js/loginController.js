@@ -182,6 +182,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
         };
 
         console.log(usuario);
+        DbFactory.createUser(usuario);
     };
 
     init();

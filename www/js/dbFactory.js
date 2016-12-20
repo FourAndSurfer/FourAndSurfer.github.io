@@ -71,7 +71,7 @@ angular.module("PizzariaApp")
                 // Insere usuários na tabela
                 // Só descomenta se precisar apagar a tabela!
 //                 tx.executeSql('DROP TABLE IF EXISTS usuarios');
-                tx.executeSql('CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, nome, email unique, tel1, tel2, rua, compl, bairro, cep, senha, isLoged BIT)');
+                tx.executeSql('CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, nome, email unique, tel1, tel2, rua, compl, bairro, cep, senha, isLoged BIT, fbId)');
                 tx.executeSql('INSERT INTO usuarios (nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged) SELECT "admin", "admin@admin.pizzaria.com.br", "2524-4225", "98753-6007", "Av. Rio Branco", "156 sl.3018", "centro", "20040-901", "P@ssw0rd", 0 WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE email = "admin@admin.pizzaria.com.br")');
                 tx.executeSql('INSERT INTO usuarios (nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged) SELECT "Rodrigo Filomeno", "rodrigo.filomeno@al.infnet.edu.br", "2524-4225", "98753-6007", "Av. Rio Branco", "156 sl.3018", "centro", "20040-901", "senha", 0 WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE email = "rodrigo.filomeno@al.infnet.edu.br")');
                 tx.executeSql('SELECT nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged FROM usuarios', [], function (tx, results) {
@@ -89,5 +89,7 @@ angular.module("PizzariaApp")
             });
 
         };
+
+        response.createuser = function(user) {};
         return response;
     }]);
