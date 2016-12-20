@@ -1,5 +1,6 @@
 angular.module('PizzariaApp')
 .controller('CartController', [ 'CartFactory', function(CartFactory) {
+    $('#troco').hide();
     var self = this;
     self.log = function() {console.log(CartFactory.cart);};
     self.cart = CartFactory.cart;
@@ -34,4 +35,12 @@ angular.module('PizzariaApp')
             }
         }
     };
+    $('#formaPgt').change(function(){
+        if ($('#formaPgt').val() == "dinheiro"){
+            $('#troco').show();
+        } else {
+            $('#troco').hide();
+        }
+    })
+
 }]);

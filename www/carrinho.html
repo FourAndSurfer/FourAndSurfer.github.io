@@ -58,16 +58,29 @@
 
                         <div class="form-group">
                             <label>Forma de Pagamento</label>
-                            <select name="" id="" class="form-controll">
+                            <select id="formaPgt" name="" id="" class="form-controll">
                <option value="">Selecione a forma de pagamento</option>
-               <option value="">Dinheiro</option>
-               <option value="">Visa Crédito</option>
-               <option value="">Master Crédito</option>
-               <option value="">Visa Débito</option>
-               <option value="">Master Débito</option>
+               <option value="dinheiro">Dinheiro</option>
+               <option value="visa_credito">Visa Crédito</option>
+               <option value="master_credito">Master Crédito</option>
+               <option value="visa_debito">Visa Débito</option>
+               <option value="master_debito">Master Débito</option>
            </select>
-
                         </div>
+
+                            <div id="troco" class="form-group">
+                            <label for="trocoInput" class="input-sm">Precisa de troco para:</label>
+                            <div class="input-group">
+                                <div class="input-group-addon input-sm">$</div>
+                                <input name="trocoInput" type="text" class="form-control input-sm" id="trocoInput" placeholder="10,00">
+                            </div>
+                        </div>
+
+
+
+
+
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
