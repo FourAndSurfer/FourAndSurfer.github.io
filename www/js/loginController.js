@@ -1,4 +1,4 @@
-angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFactory) {
+angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', function (DbFactory, $scope) {
     //--chama o plugin de geolocalização e retorna o local do dispositivo--//
     var latidude = 0;
     var longitude = 0;
@@ -198,4 +198,4 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', function (DbFact
     };
 
     init();
-            }]);
+}]);

@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="css/login.css">
-<script src="js/dbFactory.js"></script>
 <div ng-controller='login'>
     <div class="container text-center">
         <figure>
@@ -21,91 +20,82 @@
                     <div id="divError" class="form-control alert-danger">Email e/ou senha invalidos!</div>
                     <br/>
                 </div>
-                <div id="botoesLogin">
-                    <div align="center" ng-controller="login">
-                        <button id="btnEntrar" class="btn btn-default" role="button" ng-click="loginTeste()">Entrar</button>
-                        <button id="btnCadastrar" type="button" class="btn btn-default" data-toggle="modal" data-target="#modalCadastro">Cadastrar</button><br/>
-
-                    </div>
-
+                <div id="botoesLogin" align="center">
+                    <button id="btnEntrar" class="btn btn-default" role="button" ng-click="loginTeste()">Entrar</button>
+                    <button id="btnCadastrar" type="button" class="btn btn-default" data-toggle="modal" data-target="#modalCadastro">Cadastrar</button><br/>
+                </div>
+                <br/>
+                <div id="botaoLogout" align="center">
+                    <button id="btnLogout" class="btn btn-danger">Logout</button>
+                </div>
             </form>
             <div align="center">
-
-
                 <!--    botao facebook        -->
-                <div align="center" data-scope="public_profile, email" class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
-            </div>
-            </div>
-            <div id="botaoLogout">
-                <div align="center"><button align="center" id="btnLogout" class="btn btn-danger">Logout</button></div>
+                <div align="center" data-scope="public_profile, email" class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false"
+                    data-auto-logout-link="true"></div>
             </div>
         </div>
     </div>
-</div>
-
-
-<!--    MODAL INICIO    -->
-
-<div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Cadastro</h4>
-            </div>
-            <div class="modal-body">
+    <!--    MODAL INICIO    -->
+    <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Cadastro</h4>
+                </div>
                 <form>
-                    <div class="form-group">
-                        <label ng-model="cliente.nome" for="nome" class="input-sm">Nome</label>
-                        <input type="text" class="form-control input-sm" name="nome" id="nome" placeholder="nome">
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="input-sm">Email</label>
-                        <div class="input-group">
-                            <div class="input-group-addon input-sm">@</div>
-                            <input ng-model="cliente.email" name="email" type="email" class="form-control input-sm" id="email" placeholder="Email">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label ng-model="cliente.nome" for="nome" class="input-sm">Nome</label>
+                            <input type="text" class="form-control input-sm" name="nome" id="nome" placeholder="Nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="input-sm">Email</label>
+                            <div class="input-group">
+                                <div class="input-group-addon input-sm">@</div>
+                                <input ng-model="cliente.email" name="email" type="email" class="form-control input-sm" id="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="endereço" class="input-sm">Telefones</label>
+                            <div class="input-group">
+                                <a class="btn input-group-addon input-sm"><i class="glyphicon glyphicon-earphone"></i></a>
+                                <input ng-model="cliente.telefone" name="telefone" type="number" class="form-control" id="tel" placeholder="Telefone">
+                            </div>
+                            <div class="input-group">
+                                <a class="btn input-group-addon input-sm"><i class="glyphicon glyphicon-phone"></i></a>
+                                <input ng-model="cliente.celular" name="celular" type="number" class="form-control " id="cel" placeholder="Celular">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="endereço" class="input-sm">Endereço</label>
+                            <button class="btn btn-default" id="localiza">Descubra minha localização</button><!-- -->
+                            <input ng-model="cliente.endereco" name="endereco" type="text" class="form-control input-sm" id="endereco" placeholder="Rua">
+                            <input ng-model="cliente.complemento" name="complemento" type="text" class="form-control input-sm" id="complemento" placeholder="Complemento">
+                            <input ng-model="cliente.bairro" name="bairro" type="text" class="form-control input-sm" id="bairro" placeholder="Bairro">
+                            <div class="input-group">
+                                <input ng-model="cliente.cep" name="cep" type="text" class="form-control input-sm" id="cep" placeholder="CEP" maxlength="8">
+                                <a class="btn input-group-addon input-sm">X</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password" class="input-sm">Senha</label>
+                            <input ng-model="cliente.senha" name="senha" type="password" class="form-control input-sm" id="Password" placeholder="Senha">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                               <input ng-model="cliente.info" name="info" id="info" type="checkbox" checked>Desejo receber informações e promoções por e-mail.
+                        </label>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="endereço" class="input-sm">Telefones</label>
-                        <div class="input-group">
-                            <a class="btn input-group-addon input-sm"><i class="glyphicon glyphicon-earphone"></i></a>
-                            <input ng-model="cliente.telefone" name="telefone" type="number" class="form-control" id="tel" placeholder="telefone">
-                        </div>
-                        <div class="input-group">
-                            <a class="btn input-group-addon input-sm"><i class="glyphicon glyphicon-phone"></i></a>
-                            <input ng-model="cliente.celular" name="celular" type="number" class="form-control " id="cel" placeholder="celular">
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
+                        <button id="btncadastrarmodal" type="button" class="btn btn-primary btn-sm" ng-submit="cadastrar()">Cadastrar</button>
                     </div>
-                    <div class="form-group">
-                        <label for="endereço" class="input-sm">Endereço</label>
-                        <button id="localiza">Descubra minha localização</button>
-                        <input ng-model="cliente.endereco" name="endereco" type="text" class="form-control input-sm" id="endereco" placeholder="Rua">
-                        <input ng-model="cliente.complemento" name="complemento" type="text" class="form-control input-sm" id="complemento" placeholder="Complemento">
-                        <input ng-model="cliente.bairro" name="bairro" type="text" class="form-control input-sm" id="bairro" placeholder="Bairro">
-                        <div class="input-group">
-                            <input ng-model="cliente.cep" name="cep" type="text" class="form-control input-sm" id="cep" placeholder="CEP" maxlength="8">
-                            <a class="btn input-group-addon input-sm">X</a>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="Password" class="input-sm">Senha</label>
-                        <input ng-model="cliente.senha" name="senha" type="password" class="form-control input-sm" id="Password" placeholder="Senha">
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                                     <input ng-model="cliente.info" name="info" id="info" type="checkbox" checked>Desejo receber informações e promoções por e-mail.
-                                </label>
-                    </div>
-
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
-                <button id="btncadastrarmodal" type="button" class="btn btn-primary btn-sm" ng-submit="cadastrar()">Cadastrar</button>
-            </div>
-            </form>
         </div>
     </div>
+    <!-- modal -->
 </div>
-
-<!-- modal -->
