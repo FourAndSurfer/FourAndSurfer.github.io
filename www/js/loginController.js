@@ -170,29 +170,18 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
 
     function cadastrar() {
         var usuario = {
-            nome,
-            email,
-            tel,
-            cel,
-            endereco,
-            complemento,
-            bairro,
-            cep,
-            Password
+            nome: $scope.cliente.nome,
+            email: $('#email').val(),
+            tel: $('#tel').val(),
+            cel: $('#cel').val(),
+            endereco: $('#endereco').val(),
+            complemento: $('#complemento').val(),
+            bairro: $('#bairro').val(),
+            cep: $('#cep').val(),
+            Password: $('#Password').val()
         };
-        usuario.nome = $scope.cliente.nome;
-        usuario.email = $('#email').val();
-        usuario.tel = $('#tel').val();
-        usuario.cel = $('#cel').val();
-        usuario.endereco = $('#endereco').val();
-        usuario.complemento = $('#complemento').val();
-        usuario.bairro = $('#bairro').val();
-        usuario.cep = $('#cep').val();
-        usuario.Password = $('#Password').val();
 
         console.log(usuario);
-        //tx.executeSql('INSERT INTO usuarios (id, nome, email, tel1, tel2, rua, compl, bairro, cep, senha, info) SELECT ' + DbFactory.usuarios.length + ', "' + usuario.nome + '", "' + usuario.email + '",  "' + usuario.tel + '", "' + usuario.cel + '", "' + usuario.endereco + '", "' + usuario.complemento + '", "' + usuario.bairro + '", "' + usuario.cep + '", "' + usuario.Password + '", "' + usuario.info + '" WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE id = ' + DbFactory.usuarios.length + ' AND nome = "' + usuario.nome + '")');
-
     };
 
     init();
