@@ -7,13 +7,13 @@ angular.module("PizzariaApp")
             response.bebidas = [];
             response.sobremesas = [];
             response.usuarios = [];
-            var db = window.openDatabase(
+            response.db = window.openDatabase(
                 'pizzaria', // short name
                 '1.0', // version
                 'PizzariaDb', // display name
                 2 * 1024 * 1024 // size in bytes
             );
-            db.transaction(function (tx) {
+            response.db.transaction(function (tx) {
                 // Insere pizzas na tabela
                 // Só descomenta se precisar apagar a tabela!
 //                                 tx.executeSql('DROP TABLE IF EXISTS pizzas');
