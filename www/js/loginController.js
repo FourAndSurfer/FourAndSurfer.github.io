@@ -127,7 +127,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
             $('#btnCadastrar').addClass('btn-default');
             $('#btnCadastrar').removeClass('btn-primary');
         });
-        document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true">Login pelo Facebook</fb:login-button>'
+//        document.getElementById('btnFace').innerHTML = '<fb:login-button align="center"  class="center-block" scope="public_profile, email" autologoutlink="true">Login pelo Facebook</fb:login-button>'
     }
 
     //    fazendo login
