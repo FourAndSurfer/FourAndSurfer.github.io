@@ -39,7 +39,7 @@
     }
     
     html {
-        background-color: #D30000;
+        background-color: #AB0200;
         background-repeat: no-repeat;
         background-size: cover;
         overflow-x: hidden;
@@ -48,7 +48,7 @@
     }
     
     body {
-        background-image: linear-gradient(to bottom, #670000, #D30000);
+        background-image: linear-gradient(to bottom, #670000, #AB0200);
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
