@@ -4,7 +4,6 @@ angular.module('PizzariaApp')
     var self = this;
     self.log = function() {console.log(CartFactory.cart);};
     self.cart = CartFactory.cart;
-    self.qty = function() {};
     self.sumQty = function(cartItem) {
         cartItem.qty++;
     };
@@ -35,6 +34,14 @@ angular.module('PizzariaApp')
             }
         }
     };
+
+    self.zeraCarrinho = function() {
+        self.cart = [];
+        self.totalValue = 0;
+        self.totalQty = 0;
+        CartFactory.cart = [];
+    }
+
     $('#formaPgt').change(function(){
         if ($('#formaPgt').val() == "dinheiro"){
             $('#troco').show();
