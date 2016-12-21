@@ -18,8 +18,11 @@
                         <label for="password1">Senha</label>
                         <input type="password" class="form-control" id="password1" placeholder="Senha">
                     </div>
-                    <div id="divError" class="form-control alert-danger">Email e/ou senha invalidos!</div>
-                    <br/>
+                    <div id="divError" class="form-control alert-danger" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> Email e/ou senha invalidos!
+                    </div>
+
                 </div>
                 <div id="botoesLogin" align="center">
                     <button id="btnEntrar" class="btn btn-default" role="button" ng-click="loginTeste()">Entrar</button>
@@ -33,8 +36,8 @@
             <div align="center">
                 <!--    botao facebook        -->
                 <div align="center">
-                    <button id="fblogin" class="btn btn-primary" onclick="LoginToFB()">Facebook login</button>
-                    <button id="fblogout" class="btn btn-primary" onclick="Logout()">Facebook logout</button>
+                    <button id="fblogin" class="btn btn-primary" onclick="LoginToFB()"><img src="img/loginface.png" alt=""> Facebook login</button>
+                    <button id="fblogout" class="btn btn-primary" onclick="Logout()"><img src="img/loginface.png" alt="">Facebook logout</button>
 
                 </div>
 
