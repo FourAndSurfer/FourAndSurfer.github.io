@@ -24,24 +24,12 @@ function fbLoginSuccess(objeto) {
         });
 
 
-
-
-
-
-
-
-    //            var resultado = "";
-    //            for (propriedade in objeto) {
-    //                resultado += propriedade + ": " + objeto[propriedade] + "\n";
-    //            };
-    //    alert(resultado);
-
     $('#fblogin').hide();
     $('#fblogout').show();
 }
 
 function LoginToFB() {
-    facebookConnectPlugin.login(["public_profile", "email"],
+    facebookConnectPlugin.login(["public_profile", "email", ""],
         fbLoginSuccess,
         function (error) {
             $("#status").html("Erro de autenticação");

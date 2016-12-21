@@ -85,7 +85,12 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
                         <!--<a href="#" class="btn btn-primary btn" role="button" ng-click="cartCtrl.zeraCarrinho()" onclick="navigator.vibrate(300);Materialize.toast('Pedido finalizado com sucesso!', 2000);">Confirmar pedido</a>-->
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="cartCtrl.zeraCarrinho();" onclick="navigator.vibrate(300);Materialize.toast('Pedido finalizado com sucesso!', 2000)">Confirmar pedido</button>
+                        <!--                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="cartCtrl.zeraCarrinho();" onclick="navigator.vibrate(300);Materialize.toast('Pedido finalizado com sucesso!', 2000)">Confirmar pedido</button>-->
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="cartCtrl.checkConnection();" onclick="">Confirmar pedido</button>
+                        <div align='center'>
+                            <button class="btn btn-info" onclick="checkConnection();">testar conecção</button>
+                        </div>
+
                     </div>
                 </div>
                 <!-- /.modal-content -->
