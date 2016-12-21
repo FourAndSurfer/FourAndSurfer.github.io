@@ -36,6 +36,18 @@ var app = {
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
 
+         window.addEventListener("batterylow", onBatteryLow, false);
+
+        function onBatteryLow(status) {
+        Materialize.toast("Bateria baixa: " + status.level + "%", 2000);
+        }
+        window.addEventListener("batterycritical", onBatteryCritical, false);
+
+        function onBatteryCritical(status) {
+        Materialize.toast("Bateria PÉSSIMA: " + status.level + "% recarregue o aparelho!", 2000);
+};
+
+
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
