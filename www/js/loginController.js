@@ -7,6 +7,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
     $('#botaoLogout').hide();
     $('#divLogado').hide();
 
+
     $('#localiza').click(function (event) {
         console.log('OIE');
         event.preventDefault();
@@ -119,7 +120,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
 
         $('#botoesLogin').show();
         $('#botaoLogout').hide();
-
+        $('#fblogin').show();
         $("#divError").hide();
 
     });
@@ -133,26 +134,36 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
         var usuario = {
             nome: $('#nome').val(),
             email: $('#email1').val(),
-            tel: $('#tel').val(),
-            cel: $('#cel').val(),
-            endereco: $('#endereco').val(),
-            complemento: $('#complemento').val(),
+            tel1: $('#tel').val(),
+            tel2: $('#cel').val(),
+            rua: $('#endereco').val(),
+            compl: $('#complemento').val(),
             bairro: $('#bairro').val(),
             cep: $('#cep').val(),
             password: $('#password').val(),
             fbId: fbId
         };
         usuarioLogado = usuario;
+        logado = 1;
         console.log("usuarioLogado: "+ usuarioLogado);
         createuser(usuario);
         populaDb();
-        $('#modalCadastro').modal('hide')
+        $('#modalCadastro').modal('hide');
         $('#loginesenha').html('<p>Olá <strong>' + usuario.nome + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
 
         $('#botoesLogin').hide();
 
         $('#botaoLogout').show();
     });
+
+         if (logado == 1){
+       $('#loginesenha').html('<p>Olá <strong>' + usuarioLogado.nome + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
+
+                $('#fblogin').hide();
+                $('#botoesLogin').hide();
+                $('#botaoLogout').show();
+
+    }
 
     init();
 }]);
