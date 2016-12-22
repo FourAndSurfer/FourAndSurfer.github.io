@@ -116,6 +116,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
     //    inicio logout
 
     $('#btnLogout').click(function () {
+        this.prevent_default;
         $('#loginesenha').html('<div class="form-group">                        <label id="usuario" for="Email">Usuário</label>                        <input id="email" type="email" class="form-control" id="Email" placeholder="Email cadastrado">                    </div>                    <div class="form-group">                        <label for="password1">Senha</label>                        <input type="password" class="form-control" id="password1" placeholder="Senha">                    </div>                    <div id="divError" class="form-control alert-danger">Email e/ou senha invalidos!</div>                    <br/>');
         logado = 0;
         $('#botoesLogin').show();
