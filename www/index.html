@@ -47,21 +47,22 @@
     <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
     <title>Sabor &amp; Paladar</title>
 </head>
-<div style="top: 25%" class="modal fade" id="modalInicial" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+<div style="top: 25%" class="modal fade" id="modalInicial" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="HomeController as homeCtrl">
+    <div class="modal-dialog" role="document" ng-controller="CartController as cartCtrl">
         <div style=" background-color: lightgray" class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 style="color: darkred" class="modal-title" align="center" id="myModalLabel"><strong>Bem-vindo!</strong></h4>
+                <h4 style="color: darkred" class="modal-title" align="center" id="myModalLabel"><strong><h2>Promoção!</h2></strong></h4>
             </div>
             <div class="modal-body">
                 <figure align="center">
-                    <img class="img-responsive center-block" src="img/logo1.png" alt="">
+                    <img class="img-responsive center-block" src="img/pizzadodia.png.png" alt="Toscana do dia">
                 </figure>
             </div>
             <div class="modal-footer">
                 <div align="center">
-                    <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Iniciar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a  href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart({nome: 'Toscana', preco: 15.00, img: 'img/pizzadodia.png.png'});" ng-click="cartCtrl.totalValueAndQty();" onclick="navigator.vibrate(300);Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a>
                 </div>
             </div>
         </div>
