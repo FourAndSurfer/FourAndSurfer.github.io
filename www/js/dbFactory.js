@@ -106,7 +106,7 @@ angular.module("PizzariaApp")
         window.createuser = function (user) {
 
             response.db.transaction(function (tx) {
-                tx.executeSql('INSERT INTO usuarios (nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged, fbId) SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ? WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE email = ?)', [user.nome, user.email, user.tel, user.cel, user.endereco, user.complemento, user.bairro, user.cep, user.password, user.fbId, user.email],
+                tx.executeSql('INSERT INTO usuarios (nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged, fbId) SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ? WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE email = ?)', [user.nome, user.email, user.tel1, user.tel2, user.rua, user.compl, user.bairro, user.cep, user.password, user.fbId, user.email],
                     function (tx, results) {
 
                     });
