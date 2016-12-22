@@ -2,6 +2,7 @@ angular.module("PizzariaApp")
     .factory("DbFactory", ['$timeout', function ($timeout) {
         var response = {};
 
+
         response.loadDb = function () {
             response.pizzas = [];
             response.bebidas = [];
@@ -16,7 +17,7 @@ angular.module("PizzariaApp")
             response.db.transaction(function (tx) {
                 // Insere pizzas na tabela
                 // Só descomenta se precisar apagar a tabela!
-//                                                 tx.executeSql('DROP TABLE IF EXISTS pizzas');
+                //                                                 tx.executeSql('DROP TABLE IF EXISTS pizzas');
                 tx.executeSql('CREATE TABLE IF NOT EXISTS pizzas (id unique, nome, ingredientes, img, preco)');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 1, "Calabresa", "Mussarela, cebola, molho e orégano", "img/pizzas/calabresa.png", 20.00 WHERE NOT EXISTS (SELECT 1 FROM pizzas WHERE id = 1 AND nome = "Calabresa")');
                 tx.executeSql('INSERT INTO pizzas (id, nome, ingredientes, img, preco) SELECT 2, "Margherita", "Mussarela, molho, orégano, tomate e manjericão", "img/pizzas/margherita.png", 20.00 WHERE NOT EXISTS (SELECT 1 FROM pizzas WHERE id = 2 AND nome = "Margherita")');
@@ -39,7 +40,7 @@ angular.module("PizzariaApp")
 
                 // Insere bebidas na tabela
                 // Só descomenta se precisar apagar a tabela!
-//                 tx.executeSql('DROP TABLE IF EXISTS bebidas');
+                //                 tx.executeSql('DROP TABLE IF EXISTS bebidas');
                 tx.executeSql('CREATE TABLE IF NOT EXISTS bebidas (id unique, nome, descricao, img, preco)');
                 tx.executeSql('INSERT INTO bebidas (id, nome, descricao, img, preco) SELECT 1, "Coca-cola", "Refrigerante 2 litros", "img/bebidas/coca-cola.png", 5.90 WHERE NOT EXISTS (SELECT 1 FROM bebidas WHERE id = 1 AND nome = "Coca-cola")');
                 tx.executeSql('INSERT INTO bebidas (id, nome, descricao, img, preco) SELECT 2, "Coca-Zero", "Refrigerante 2 litros", "img/bebidas/coca-zero.png", 5.90 WHERE NOT EXISTS (SELECT 1 FROM bebidas WHERE id = 2 AND nome = "Coca-Zero")');
@@ -56,7 +57,7 @@ angular.module("PizzariaApp")
 
                 // Insere sobremesas na tabela
                 // Só descomenta se precisar apagar a tabela!
-//                 tx.executeSql('DROP TABLE IF EXISTS sobremesas');
+                //                 tx.executeSql('DROP TABLE IF EXISTS sobremesas');
                 tx.executeSql('CREATE TABLE IF NOT EXISTS sobremesas (id unique, nome, descricao, img, preco)');
                 tx.executeSql('INSERT INTO sobremesas (id, nome, descricao, img, preco) SELECT 1, "Dipp\'s de Canela", "A nossa deliciosa massa coberta de açúcar e canela, acompanhada de doce de leite.", "img/sobremesas/dipps.png", 8.99 WHERE NOT EXISTS (SELECT 1 FROM sobremesas WHERE id = 1 AND nome = "Dipp\'s de Canela")');
                 tx.executeSql('INSERT INTO sobremesas (id, nome, descricao, img, preco) SELECT 2, "Chocobread", "Massa finíssima recheada de muito chocolate e cobertura de creme de baunilha com granulado.", "img/sobremesas/chocobread.png", 7.95 WHERE NOT EXISTS (SELECT 1 FROM sobremesas WHERE id = 2 AND nome = "Chocobread")');
@@ -70,7 +71,7 @@ angular.module("PizzariaApp")
 
                 // Insere usuários na tabela
                 // Só descomenta se precisar apagar a tabela!
-//                                tx.executeSql('DROP TABLE IF EXISTS usuarios');
+                //                                tx.executeSql('DROP TABLE IF EXISTS usuarios');
                 tx.executeSql('CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, nome, email unique, tel1, tel2, rua, compl, bairro, cep, senha, isLoged BIT, fbId)');
                 tx.executeSql('INSERT INTO usuarios (nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged) SELECT "admin", "admin@admin.pizzaria.com.br", "2524-4225", "98753-6007", "Av. Rio Branco", "156 sl.3018", "centro", "20040-901", "P@ssw0rd", 0 WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE email = "admin@admin.pizzaria.com.br")');
                 tx.executeSql('INSERT INTO usuarios (nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged) SELECT "Rodrigo Filomeno", "rodrigo.filomeno@al.infnet.edu.br", "2524-4225", "98753-6007", "Av. Rio Branco", "156 sl.3018", "centro", "20040-901", "senha", 0 WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE email = "rodrigo.filomeno@al.infnet.edu.br")');
@@ -89,9 +90,22 @@ angular.module("PizzariaApp")
             });
 
         };
+        window.populaDb = function (tx, results) {
+            response.db.transaction(function (tx) {
+                tx.executeSql('SELECT nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged FROM usuarios', [], function (tx, results) {
+                    var len = results.rows.length,
+                        i;
+                    for (i = 0; i < len; i++) {
+                        console.log('at  users');
+                        console.log(results.rows.item(i));
+                        response.usuarios.push(results.rows.item(i));
+                    }
+                });
+            });
+        }
 
         window.createuser = function (user) {
-            alert('entrou');
+
             response.db.transaction(function (tx) {
                 tx.executeSql('INSERT INTO usuarios (nome, email, tel1, tel2, rua, compl, bairro, cep, senha, isLoged, fbId) SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ? WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE email = ?)', [user.nome, user.email, user.tel, user.cel, user.endereco, user.complemento, user.bairro, user.cep, user.password, user.fbId, user.email],
                     function (tx, results) {
@@ -103,4 +117,6 @@ angular.module("PizzariaApp")
         };
 
         return response;
+
+
     }]);

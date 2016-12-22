@@ -141,6 +141,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
 
         console.log(usuario);
         createuser(usuario);
+        populaDb();
         $('#modalCadastro').modal('hide')
         $('#loginesenha').html('<p>Olá <strong>' + usuario.nome + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
 
