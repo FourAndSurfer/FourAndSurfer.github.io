@@ -5,6 +5,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
     var fbId = null;
     $("#divError").hide();
     $('#botaoLogout').hide();
+    $('#divLogado').hide();
 
     $('#localiza').click(function (event) {
         console.log('OIE');
@@ -94,7 +95,10 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
 
         for (i = 0; i < DbFactory.usuarios.length; i++)
             if ((usuarioEmail == DbFactory.usuarios[i].email) && (usuarioSenha == DbFactory.usuarios[i].senha)) {
+                usuarioLogado = DbFactory.usuarios[i];
 
+                logado = 1;
+                console.log("usuarioLogado: "+ DbFactory.usuarios[i]);
                 $('#loginesenha').html('<p>Olá <strong>' + DbFactory.usuarios[i].nome + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
 
                 $('#botoesLogin').hide();
@@ -138,8 +142,8 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
             password: $('#password').val(),
             fbId: fbId
         };
-
-        console.log(usuario);
+        usuarioLogado = usuario;
+        console.log("usuarioLogado: "+ usuarioLogado);
         createuser(usuario);
         populaDb();
         $('#modalCadastro').modal('hide')
