@@ -5,6 +5,8 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
     var fbId = null;
     $("#divError").hide();
     $('#botaoLogout').hide();
+    $('#divLogado').hide();
+
 
     $('#localiza').click(function (event) {
         console.log('OIE');
@@ -94,7 +96,10 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
 
         for (i = 0; i < DbFactory.usuarios.length; i++)
             if ((usuarioEmail == DbFactory.usuarios[i].email) && (usuarioSenha == DbFactory.usuarios[i].senha)) {
+                usuarioLogado = DbFactory.usuarios[i];
 
+                logado = 1;
+                console.log("usuarioLogado: "+ DbFactory.usuarios[i]);
                 $('#loginesenha').html('<p>Olá <strong>' + DbFactory.usuarios[i].nome + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
 
                 $('#botoesLogin').hide();
@@ -111,11 +116,12 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
     //    inicio logout
 
     $('#btnLogout').click(function () {
+        this.prevent_default;
         $('#loginesenha').html('<div class="form-group">                        <label id="usuario" for="Email">Usuário</label>                        <input id="email" type="email" class="form-control" id="Email" placeholder="Email cadastrado">                    </div>                    <div class="form-group">                        <label for="password1">Senha</label>                        <input type="password" class="form-control" id="password1" placeholder="Senha">                    </div>                    <div id="divError" class="form-control alert-danger">Email e/ou senha invalidos!</div>                    <br/>');
-
+        logado = 0;
         $('#botoesLogin').show();
         $('#botaoLogout').hide();
-
+        $('#fblogin').show();
         $("#divError").hide();
 
     });
@@ -129,25 +135,37 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
         var usuario = {
             nome: $('#nome').val(),
             email: $('#email1').val(),
-            tel: $('#tel').val(),
-            cel: $('#cel').val(),
-            endereco: $('#endereco').val(),
-            complemento: $('#complemento').val(),
+            tel1: $('#tel').val(),
+            tel2: $('#cel').val(),
+            rua: $('#endereco').val(),
+            compl: $('#complemento').val(),
             bairro: $('#bairro').val(),
             cep: $('#cep').val(),
             password: $('#password').val(),
             fbId: fbId
         };
-
-        console.log(usuario);
+        usuarioLogado = usuario;
+        logado = 1;
+        console.log("usuarioLogado: "+ usuarioLogado);
         createuser(usuario);
-        $('#modalCadastro').modal('hide')
+        populaDb();
+        $('#modalCadastro').modal('hide');
         $('#loginesenha').html('<p>Olá <strong>' + usuario.nome + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
 
         $('#botoesLogin').hide();
 
         $('#botaoLogout').show();
     });
+
+         if (logado == 1){
+       $('#loginesenha').html('<p>Olá <strong>' + usuarioLogado.nome + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
+
+                $('#fblogin').hide();
+                $('#botoesLogin').hide();
+                $('#botaoLogout').show();
+
+
+    }
 
     init();
 }]);
