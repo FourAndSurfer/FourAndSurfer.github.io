@@ -122,6 +122,7 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
         $('#botoesLogin').show();
         $('#botaoLogout').hide();
         $('#fblogin').show();
+        $('#fblogout').hide();
         $("#divError").hide();
 
     });
@@ -149,12 +150,12 @@ angular.module('PizzariaApp').controller('login', ['DbFactory', '$scope', functi
         console.log("usuarioLogado: "+ usuarioLogado);
         createuser(usuario);
         populaDb();
-        $('#modalCadastro').modal('hide');
         $('#loginesenha').html('<p>Olá <strong>' + usuario.nome + '</strong> seja bem vindo!</p><p>Boas compras e tenha um bom lanche!</p>');
 
         $('#botoesLogin').hide();
-
+        $('#fblogin').hide();
         $('#botaoLogout').show();
+        $('#fblogout').show();
     });
 
          if (logado == 1){
