@@ -90,7 +90,7 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
                         <!--<a href="#" class="btn btn-primary btn" role="button" ng-click="cartCtrl.zeraCarrinho()" onclick="navigator.vibrate(300);Materialize.toast('Pedido finalizado com sucesso!', 2000);">Confirmar pedido</a>-->
                         <!--                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="cartCtrl.zeraCarrinho();" onclick="navigator.vibrate(300);Materialize.toast('Pedido finalizado com sucesso!', 2000)">Confirmar pedido</button>-->
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="cartCtrl.checkConnection();" onclick="">Confirmar pedido</button>
+                        <button id="confirmarPedido" type="button" class="btn btn-primary" data-dismiss="modal" ng-click="cartCtrl.checkConnection();" onclick="" disabled>Confirmar pedido</button>
 
 
                     </div>
@@ -104,6 +104,10 @@
  <script>
      if(logado == 1){
          $('#divLogado').show();
+         $("#confirmarPedido").removeAttr('disabled');
+     } else {
+         $("#confirmarPedido").attr('disabled', 'true');
+         $('#divLogado').hide();
      }
 $("#usuarioLogado").html('<h3>'+usuarioLogado.nome+'</h3>                                   <p>Endereço para entrega:</p>                                     <p>'+usuarioLogado.rua+', '+ usuarioLogado.compl+'</p><p>'+usuarioLogado.bairro+'</p><p> CEP: '+usuarioLogado.cep+"</p>");
 </script>

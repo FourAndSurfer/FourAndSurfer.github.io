@@ -62,7 +62,7 @@
             <div class="modal-footer">
                 <div align="center">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a  href="#/" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart({nome: 'Toscana', preco: 15.00, img: 'img/pizzadodia.png.png'});" ng-click="cartCtrl.totalValueAndQty();" onclick="navigator.vibrate(300);Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a>
+                    <a  data-dismiss="modal" href="#/" id="queroessaPromo" class="btn btn-primary btn" role="button" ng-click="homeCtrl.sendToCart({nome: 'Toscana', preco: 15.00, img: 'img/pizzadodia.png.png'});" ng-click="cartCtrl.totalValueAndQty();" onclick="navigator.vibrate(300);Materialize.toast('Incluído com sucesso!', 2000)">Quero Essa!</a>
                 </div>
             </div>
         </div>
@@ -101,7 +101,6 @@
     <!--    <script src="js/facebook.js"></script>-->
     <script type="text/javascript">
         app.initialize();
-
     </script>
 </body>
 
