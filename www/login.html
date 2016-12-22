@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="css/login.css">
 <script src="js/fbplugin.js"></script>
+
 <div ng-controller='login'>
     <div class="container text-center">
         <figure>
@@ -18,8 +19,11 @@
                         <label for="password1">Senha</label>
                         <input type="password" class="form-control" id="password1" placeholder="Senha">
                     </div>
-                    <div id="divError" class="form-control alert-danger">Email e/ou senha invalidos!</div>
-                    <br/>
+                    <div id="divError" class="form-control alert-danger" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> Email e/ou senha invalidos!
+                    </div>
+
                 </div>
                 <div id="botoesLogin" align="center">
                     <button id="btnEntrar" class="btn btn-default" role="button" ng-click="loginTeste()">Entrar</button>
@@ -33,11 +37,11 @@
             <div align="center">
                 <!--    botao facebook        -->
                 <div align="center">
-                <button id="fblogin" class="btn btn-primary" onclick="LoginToFB()">Facebook login</button>
-                <button id="fblogout" class="btn btn-primary" onclick="Logout()">Facebook logout</button>
-                <div id="status"></div>
+                    <button id="fblogin" class="btn btn-primary" onclick="LoginToFB()"><img src="img/loginface.png" alt=""> Facebook login</button>
+                    <button id="fblogout" class="btn btn-primary" onclick="Logout()"><img src="img/loginface.png" alt="">Facebook logout</button>
+
                 </div>
-<!--                <div align="center" data-scope="public_profile, email" class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>-->
+
             </div>
         </div>
     </div>
@@ -92,7 +96,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
-                        <button id="btncadastrarmodal" type="button" class="btn btn-primary btn-sm" ng-submit="cadastrar()">Cadastrar</button>
+                        <button id="btncadastrarmodal" type="button" class="btn btn-primary btn-sm" ng-submit="cadastrar();">Cadastrar</button>
                     </div>
                 </form>
             </div>
@@ -100,3 +104,4 @@
     </div>
     <!-- modal -->
 </div>
+
